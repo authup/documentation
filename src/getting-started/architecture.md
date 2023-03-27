@@ -5,7 +5,7 @@
 The server component is the heart 🧡 of the authup ecosystem and can be used without any other component.
 It provides an HTTP-API interface to interact with various resources.
 
-These endpoints can be inspected after starting the application under the `/docs` (http://localhost:3010/docs) endpoint.
+These endpoints can be inspected after starting the application under the `/docs` endpoint.
 Also, client libraries for [JavaScript]() and [Python]() provide a way to interact with the architecture in a more secure way.
 
 ## App
