@@ -1,0 +1,35 @@
+{
+    "name": "@authup/docs",
+    "private": true,
+    "version": "1.0.0",
+    "description": "This repository contains the authup documentation.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/authup/documentation.git"
+    },
+    "main": "dist/index.js",
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "dev": "vitepress dev src --temp .temp",
+        "build": "vitepress build src --temp .temp",
+        "help": "vitepress --help"
+    },
+    "keywords": [
+        "docs"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@tada5hi/eslint-config-vue-typescript": "^1.2.6",
+        "eslint": "^8.36.0",
+        "flexsearch": "^0.7.31",
+        "rimraf": "^4.4.1",
+        "vitepress-plugin-search": "^1.0.4-alpha.19",
+        "typescript": "^5.0.2"
+    },
+    "dependencies": {
+        "vitepress": "^1.0.0-alpha.63",
+        "vue": "^3.2.47"
+    }
+}
