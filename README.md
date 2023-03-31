@@ -6,8 +6,7 @@ This repository contains:
 - markdown files 
 - images 
 
-to be compiled into the PHT Documentation and User guide hosted
-on [GitHub Pages](https://authup.net).
+to be compiled into the documentation hosted on [GitHub Pages](https://authup.net).
 
 ## Contributing
 
@@ -17,7 +16,7 @@ on [GitHub Pages](https://authup.net).
 git clone https://github.com/authup/documentation
 ```
 
-2Install dependencies
+2. Install dependencies
 
 ```shell
 npm i
