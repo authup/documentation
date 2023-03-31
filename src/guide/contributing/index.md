@@ -5,4 +5,3 @@ This package depends on the [routup](https://www.npmjs.com/package/routup) libra
 - middlewares
 
 which need to be registered.
-Check out the [Server](../server/index.md) package for an exemplary integration.

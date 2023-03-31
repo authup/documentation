@@ -1,8 +1,6 @@
 # API Client
 
-The APIClient Class provides an easy way to interact with the REST-API to manage domain resources, 
-which are available by using the [server](../../packages/server/index.md) or [server-core](../contributing/index.md) package.
-
+The APIClient Class provides an easy way to interact with the REST-API to manage domain resources.
 ## Configuration
 
 To configure the API Client, the `baseURL` parameter for the driver config of the constructor should be set.
@@ -45,7 +43,7 @@ const client = new APIClient(/* ... */);
 
 ```
 
-Checkout the [domain](../../packages/common/domains.md) section for available APIClients.
+Checkout the [domain](./api-reference-domains.md) section for available APIClients.
 
 ## Request & Responses
 
@@ -121,6 +119,6 @@ The response maybe differs if the [server-core](../contributing/index.md) packag
 }
 ```
 
-The error codes can be used to handle each error separately. Check out the [Api Reference](../../packages/common/error-api-reference.md#errorcode) for available error codes.
+The error codes can be used to handle each error separately. Check out the [Api Reference](./javascript-api-reference#errorcode) for available error codes.
 
 
