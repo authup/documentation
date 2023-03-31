@@ -3,7 +3,7 @@ All domain entities, which can be managed by the REST-API, must be set for the D
 
 ::: warning Important
 
-It is highly recommend to include the provided [subscribers](./subscribers.md),
+It is highly recommend to include the provided [subscribers](database-subscribers.md),
 to invalidate the entity cache for example, when caching is enabled.
 
 :::

@@ -3,7 +3,7 @@
 This package is shipped with a management system for permissions,
 which scales between a **claim based** and **subject/attribute based** authorization.
 
-The data ([AbilityDescriptor(s)](ability-api-reference.md#abilitydescriptor)) to initialize 
+The data ([AbilityDescriptor(s)](javascript-api-reference.md#abilitydescriptor)) to initialize 
 the `AbilityManager` can be serialized as json for example and shared between frontend and backend services,
 to provide the same features on both sides.
 

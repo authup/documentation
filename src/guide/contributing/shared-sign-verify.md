@@ -145,8 +145,8 @@ export type TokenSignOptions = ({
 ```
 
 **References**
-- [KeyPair](key-pair.md#keypair)
-- [KeyPairOptions](key-pair.md#keypairoptions)
+- [KeyPair](shared-key-pair.md#keypair)
+- [KeyPairOptions](shared-key-pair.md#keypairoptions)
 
 ## `TokenVerifyOptions`
 
@@ -176,8 +176,8 @@ export type TokenVerifyOptions = ({
 ```
 
 **References**
-- [KeyPair](key-pair.md#keypair)
-- [KeyPairOptions](key-pair.md#keypairoptions)
+- [KeyPair](shared-key-pair.md#keypair)
+- [KeyPairOptions](shared-key-pair.md#keypairoptions)
 
 ## `TokenDecodeOptions`
 

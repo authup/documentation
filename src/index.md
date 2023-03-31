@@ -13,14 +13,17 @@ hero:
          link: https://github.com/tada5hi/authup
 
 features:
-    - icon: 🔋
+    - icon: 🛡️
+      title: Identity- & Access-Management
+      details: Manage user identities and control access to resources
+    - icon: 🏭
       title: Clustering
-      details: Scalability and availability
-    - icon: ⚡
-      title: Fast
-      details: Bleeding edge techniques using asynchronous I/O and Event-driven programming
-    - icon: 🔒
-      title: Secure
-      details: Secured with industry level encryption algorithms
+      details: Cluster and scale authup for high availability and performance
+    - icon: 🚀
+      title: Fast & Reliable
+      details: Fast and reliable system due to microservice architecture
+    - icon: 🕵️‍♀️
+      title: Logging & Monitoring
+      details: Logs and monitors activities and transactions to detect potential security issues
 ---
 ---

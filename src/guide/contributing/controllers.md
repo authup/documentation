@@ -1,5 +1,5 @@
 # Controllers
-The controllers must be registered in the gap of the common- & error-[middlewares](./middlewares.md).
+The controllers must be registered in the gap of the common- & error-[middlewares](middlewares.md).
 
 ```typescript
 import {

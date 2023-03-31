@@ -1,7 +1,7 @@
 # API Client
 
 The APIClient Class provides an easy way to interact with the REST-API to manage domain resources, 
-which are available by using the [server](../server/index.md) or [server-core](../server-http/index.md) package.
+which are available by using the [server](../../packages/server/index.md) or [server-core](../contributing/index.md) package.
 
 ## Configuration
 
@@ -45,7 +45,7 @@ const client = new APIClient(/* ... */);
 
 ```
 
-Checkout the [domain](domains.md) section for available APIClients.
+Checkout the [domain](../../packages/common/domains.md) section for available APIClients.
 
 ## Request & Responses
 
@@ -109,7 +109,7 @@ the api responds with an error payload, which looks like this:
 
 ::: warning Important
 
-The response maybe differs if the [server-core](../server-http/index.md) package is **not** used with the provided error middleware.
+The response maybe differs if the [server-core](../contributing/index.md) package is **not** used with the provided error middleware.
 
 :::
 
@@ -121,6 +121,6 @@ The response maybe differs if the [server-core](../server-http/index.md) package
 }
 ```
 
-The error codes can be used to handle each error separately. Check out the [Api Reference](error-api-reference.md#errorcode) for available error codes.
+The error codes can be used to handle each error separately. Check out the [Api Reference](../../packages/common/error-api-reference.md#errorcode) for available error codes.
 
 
