@@ -5,7 +5,7 @@ import{_ as s,o as a,c as n,N as l}from"./chunks/framework.7e203a6d.js";const C=
 <span class="line"></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">// create http client</span></span>
 <span class="line"><span style="color:#C792EA;">const</span><span style="color:#A6ACCD;"> http </span><span style="color:#89DDFF;">=</span><span style="color:#A6ACCD;"> axios</span><span style="color:#89DDFF;">.</span><span style="color:#82AAFF;">create</span><span style="color:#A6ACCD;">(</span><span style="color:#89DDFF;">{</span></span>
-<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#F07178;">baseURL</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">http://localhost:3002/</span><span style="color:#89DDFF;">&#39;</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#F07178;">baseURL</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">http://localhost:3001/</span><span style="color:#89DDFF;">&#39;</span></span>
 <span class="line"><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">)</span><span style="color:#89DDFF;">;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">// create redis client</span></span>
