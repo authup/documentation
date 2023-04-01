@@ -15,7 +15,7 @@ declare async function useKeyPair(value?: Partial<KeyPairOptions> | string) : Pr
 import {
       useKeyPair,
       KeyPairOptions 
-  } from '@authup/server-common';
+  } from '@authup/server-core';
 
 const options: Partial<KeyPairOptions> = {
     /* ... */
@@ -49,7 +49,7 @@ declare async function createKeyPair(
 import {
     createKeyPair,
     KeyPairOptions 
-} from '@authup/server-common';
+} from '@authup/server-core';
 
 const options: Partial<KeyPairOptions> = {
     /* ... */
@@ -81,7 +81,7 @@ declare async function deleteKeyPair(options?: Partial<KeyPairOptions>) : Promis
 import {
     deleteKeyPair,
     KeyPairOptions 
-} from '@authup/server-common';
+} from '@authup/server-core';
   
 const options: Partial<KeyPairOptions> = {
     /* ... */

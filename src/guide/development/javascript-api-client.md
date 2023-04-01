@@ -7,7 +7,7 @@ To configure the API Client, the `baseURL` parameter for the driver config of th
 
 
 ```typescript
-import { APIClient } from '@authup/common';
+import { APIClient } from '@authup/core';
 
 const client = new APIClient({
     driver: {
@@ -28,7 +28,7 @@ For example:
 **Realm**: realm
 
 ```typescript
-import { APIClient } from '@authup/common';
+import { APIClient } from '@authup/core';
 
 const client = new APIClient(/* ... */);
 
@@ -59,7 +59,7 @@ The response of a resource collection request always return meta information abo
 predicate(s) and which part of data set is returned (`limit` & `offset`).
 
 ```typescript
-import { APIClient } from '@authup/common';
+import { APIClient } from '@authup/core';
 
 const client = new APIClient({
     /* ... */
@@ -84,7 +84,7 @@ const client = new APIClient({
 The response of a single resource request always return the resource object **without** meta information.
 
 ```typescript
-import { APIClient } from '@authup/common';
+import { APIClient } from '@authup/core';
 
 const client = new APIClient({
     /* ... */

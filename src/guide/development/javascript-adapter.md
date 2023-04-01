@@ -1,4 +1,4 @@
-# Server-Adapter 🌉
+# Server-Adapter
 The main propose of this package, 
 is to provide middlewares for:
 - http or

@@ -20,3 +20,5 @@ Read more [here](./../guide/deployment/index).
 
 The development guide provides information on how to implement your own extensions
 for the Authup Ecosystems and how to use existing UI components and SDKs.
+
+Read more [here](./../guide/development/index).

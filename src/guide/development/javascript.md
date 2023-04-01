@@ -11,6 +11,6 @@ for all other packages of the package collection.
 Add the package as a dependency to the project.
 
 ```sh
-npm install @authup/common --save
+npm install @authup/core --save
 ```
 

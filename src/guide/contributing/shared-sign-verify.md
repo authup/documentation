@@ -155,7 +155,7 @@ The type is simplified for better readability.
 :::
 
 ```typescript
-import { KeyType } from '@authup/common';
+import { KeyType } from '@authup/core';
 import { KeyPair, KeyPairOptions } from '@authup/server-utils';
 import { VerifyOptions } from 'jsonwebtoken';
 

@@ -68,7 +68,7 @@ import the entity and define a one-to-one, many-to-one, one-to-many or many-to-m
 Database entities are always suffixed with the `Entity` keyword.
 
 ```typescript
-import { User } from '@authup/common';
+import { User } from '@authup/core';
 import { UserEntity } from '@authup/server-database';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
