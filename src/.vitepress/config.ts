@@ -76,19 +76,28 @@ export default defineConfig({
                     text: 'Getting Started',
                     items: [
                         {text: 'Introduction', link: '/guide/deployment/'},
-
                     ]
                 },
                 {
                     text: 'Configuration',
                     items: [
-                        {text: 'Introduction', link: '/guide/deployment/configuration'}, // Basic & In Depth?
-                        {text: 'API', link: '/guide/deployment/configuration-api'}, // Basic & In Depth?
+                        {text: 'Introduction', link: '/guide/deployment/configuration'},
+                        {
+                            text: 'API',
+                            link: '/guide/deployment/configuration-api',
+                            items: [
+                                { text: 'General', link: '/guide/deployment/configuration-api' },
+                                { text: 'Database', link: '/guide/deployment/configuration-api-database' },
+                                { text: 'Redis', link: '/guide/deployment/configuration-api-redis' },
+                                { text: 'SMTP', link: '/guide/deployment/configuration-api-smtp' },
+                                { text: 'Vault', link: '/guide/deployment/configuration-api-vault' }
+                            ]
+                        },
                         {text: 'UI', link: '/guide/deployment/configuration-ui'}
                     ]
                 },
                 {
-                    text: 'Target',
+                    text: 'Targets',
                     items: [
                         {text: 'Bare Metal', link: '/guide/deployment/bare-metal'},
                         {text: 'Docker', link: '/guide/deployment/docker'},

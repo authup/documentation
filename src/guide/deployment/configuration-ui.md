@@ -3,7 +3,7 @@
 The UI configuration can be provided in different file formats, 
 such as `authup.ui.{conf,js,ts,...}`.
 
-## File
+The environment variables in the .env file variant can also be provided via runtime environment.
 
 ::: code-group
 
@@ -14,31 +14,33 @@ export default {
      * The environment of the application.
      */
     env: 'production',
-
     /**
      * The application port.
      */
     port: 3000,
-
     /**
      * The address where the API can be reached.
      */
     apiUrl: 'http://localhost:3001',
+    /**
+     * The public url of the user interface.
+     */
+    publicUrl: 'http://localhost:3000',
 }
 ```
 
-```dotenv [authup.api.conf]
+```dotenv [authup.ui.conf]
+env=production
+port=3000
+apiUrl=http://localhost:3001
+publicUrl=http://localhost:3000
+
+```
+
+````dotenv [authup.ui.conf]
 NODE_ENV=production
 PORT=3000
 API_URL=http://localhost:3001
-
-```
-::: 
-
-## Environment
-
-The following environment variables are available:
-
-- `NODE_ENV`: **string**
-- `PORT`: **number**
-- `API_URL`: **string**
+PUBLIC_URL=http://localhost:3000
+````
+:::

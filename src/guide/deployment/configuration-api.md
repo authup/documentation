@@ -3,7 +3,7 @@
 The API configuration can be provided in different file formats, 
 such as `authup.api.{conf,js,ts,...}`.
 
-## File
+The environment variables in the .env file variant can also be provided via runtime environment.
 
 ::: code-group
 
@@ -14,45 +14,31 @@ export default {
      * The environment of the application.
      */
     env: 'production',
-
     /**
      * The application port.
      */
     port: 3001,
-
     /**
      * The address where the API can be reached.
      */
-    apiUrl: 'http://localhost:3001',
+    publicUrl: 'http://localhost:3001',
     /**
      * The redirect url to redirect to after successful
      * login with an external identity provider.
      */
     authorizeRedirectUrl: 'http://localhost:3000',
     /**
-     * Boolean or connection string (redis://127.0.0.1)
+     * Enable registration.
      */
-    redis: true,
+    registration: false,
     /**
-     * Boolean or connection string (start123@http://127.0.0.1:8090/v1/)
+     * Email verification required for registration or login with identity provider.
      */
-    vault: true,
+    emailVerification: false,
     /**
-     * Boolean, connection string or configuration object. 
-     * (smtp(s)://username:password@smtp.example.com)
+     * Allow password reset via email?
      */
-    smtp: {
-        host: '127.0.0.1', 
-        port: 25, 
-        user: '', 
-        password: '', 
-        ssl: false, 
-        starttls: false, 
-        from: 'no-reply@example.com', 
-        fromDisplayName: 'Authup', 
-        replyTo: 'contact@example.com', 
-        replyToDisplayName: 'Authup'
-    },
+    forgotPassword: false,
     /**
      * Admin user name.
      * Default: 'admin'
@@ -85,19 +71,12 @@ export default {
 ```
 
 ```dotenv [authup.api.conf]
+port=3001
+publicUrl=http://localhost:3001
 authorizeRedirectUrl=http://localhost:3000
-redis=true
-vault=true
-smtp.host=127.0.0.1
-smtp.port=25
-smtp.user=
-smtp.password=
-smtp.ssl=false
-smtp.starttls=false
-smtp.from=no-reply@example.com
-smtp.fromDisplayName=Authup
-smtp.replyTo=contact@example.com
-smtp.replyToDisplayName=Authup
+registration=false
+emailVerification=false
+forgotPassword=false
 adminUsername=admin
 adminPassword=start123
 adminPasswordReset=false
@@ -106,25 +85,20 @@ robotSecret=foo
 robotSecretReset=false
 
 ```
-::: 
 
-## Environment
+```dotenv [.env]
+PORT=3001
+PUBLIC_URL=http://localhost:3001
+AUTHORIZE_REDIRECT_URL=http://localhost:3000
+REGISTRATION=false
+EMAIL_VERIFICATION=false
+FORGOT_PASSWORD=false
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=start123
+ADMIN_PASSWORD_RESET=false
+ROBOT_ENABLED=false
+ROBOT_SECRET=foo
+ROBOT_SECRET_RESET=false
 
-The following environment variables are available:
-
-- `NODE_ENV`: **string**
-- `WRITABLE_DIRECTORY_PATH`: **string**
-- `HOST`: **string**
-- `PORT`: **number**
-- `PUBLIC_URL`: **string**
-- `ADMIN_USERNAME`: **string**
-- `ADMIN_PASSWORD`: **string**
-- `ROBOT_ENABLED`: **boolean**
-- `ROBOT_SECRET`: **string**
-- `PERMISSIONS`: **string**
-- `AUTHORIZE_REDIRECT_URL`: **string**
-- `ACCESS_TOKEN_MAX_AGE`: **number**
-- `REFRESH_TOKEN_MAX_AGE`: **number**
-- `REGISTRATION`: **boolean**
-- `EMAIL_VERIFICATION`: **boolean**
-- `FORGOT_PASSWORD`: **boolean**
+```
+:::
