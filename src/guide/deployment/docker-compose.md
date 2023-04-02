@@ -27,6 +27,9 @@ authup stores its data. The first option is to use a docker managed volume. The 
 ```yaml
 version: '3.8'
 
+volumes:
+    authup:
+
 services:
   authup:
     image: ghcr.io/authup/authup:latest
@@ -49,6 +52,9 @@ The following example shows how to configure the Authup service using environmen
 
 ```yaml
 version: '3.8'
+
+volumes:
+    authup:
 
 services:
   authup:
