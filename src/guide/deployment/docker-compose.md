@@ -58,7 +58,7 @@ docker compose logs -f
 ```
 
 
-### Configuration via environment variables
+## Configuration via environment variables
 
 The following example shows how to configure the Authup service using environment variables.
 
@@ -84,7 +84,7 @@ services:
 ```
 
 
-### Mounting a configuration file
+## Mounting a configuration file
 
 The following example shows how to mount a configuration file into the Authup service achieving the same results as in 
 the previous example with environment variables.
@@ -115,7 +115,7 @@ services:
 ```
 
 
-### Running alongside other services
+## Running alongside other services
 This shows an example of how to run authup alongside other services. In this example, the authup service is configured to
 run alongside a postgres database and a redis instance.
 
@@ -169,9 +169,8 @@ services:
 
 ```
 
-# Troubleshooting
-
-## Container not reachable
+## Troubleshooting
+### Authup not reachable for redirect in other services
 If you would like to access the Authup instance and your operations require a redirect to the Authup instance, you need to
 set the `PUBLIC_URL` environment variable to the service name and port of the Authup service (i.e. `authup:3000`). This will
 allow the compose network to resolve the service name to the correct IP address.
