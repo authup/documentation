@@ -9,7 +9,7 @@ The following guide is based on some shared assumptions:
 - Docker `v20.x` is [installed](https://docs.docker.com/get-docker/)
 - Min. `2` cores
 - Min. `5G` hard disk
-- Ports `3000` and `3001` are free on the host system
+- Up to two available ports on the host system if you want to map the services to your local machine (default: `3000` and `3001`)
 
 
 ## Step. 1: Create a new project

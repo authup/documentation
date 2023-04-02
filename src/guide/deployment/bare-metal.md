@@ -8,7 +8,7 @@ The following guide is based on some shared assumptions:
 - NodeJs `v16` (minimum)
 - Min. `2` cores
 - Min. `5G` hard disk
-- Ports `3000` and `3001` are free
+- Up to two available ports (default: `3000` and `3001`)
 
 ## Step. 1: Create a new project
 

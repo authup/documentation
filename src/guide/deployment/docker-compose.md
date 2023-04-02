@@ -9,7 +9,7 @@ The following guide is based on some shared assumptions:
 - Min. `2` cores
 - Min. `5G` hard disk
 - Docker `v20.x` is [installed](https://docs.docker.com/get-docker/)
-- Ports `3000` and `3001` are free on the host system
+- Up to two available ports on the host system if you want to map the services to your local machine (default: `3000` and `3001`)
 - This guide assumes [Compose v2](https://docs.docker.com/compose/compose-file/)
 
 
@@ -17,9 +17,8 @@ The following guide is based on some shared assumptions:
 ## Compose file configuration
 
 This section contains multiple examples for how to deploy and configure authup using docker-compose. The different 
-examples show how to configure authup using the options described in the [configuration](./configuration) section.
-
-### Basic configuration
+examples show how to configure authup using the options described in the [configuration](./configuration) section. Simply
+paste and modify the example you want to use into a `docker-compose.yml` file.
 
 The following example shows the most basic configuration for authup. It shows two options for configuring where
 authup stores its data. The first option is to use a docker managed volume. The second option is to mount a local directory.
@@ -45,6 +44,19 @@ services:
       - "3001:3001"
 
 ```
+
+Then start the service using the following command:
+
+```bash
+docker compose up -d
+```
+
+and check the logs using:
+
+```bash
+docker compose logs -f
+```
+
 
 ### Configuration via environment variables
 
