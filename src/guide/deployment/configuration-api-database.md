@@ -1,10 +1,8 @@
 # Database
 
 By default, the database is run with `SQLite`,
-but `MySQL`(**recommended**) or `Postgres`(**recommended**) should be used for the following reasons.
-
-Postgres and MySQL are preferred over SQLite for their superior performance,
-scalability and advanced features such as built-in replication.
+but for a production environment we recommend using `MySQL` or `Postgres` since they provide
+superior performance, scalability and advanced features such as built-in replication.
 
 ## MySQL
 

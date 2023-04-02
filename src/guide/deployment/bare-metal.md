@@ -1,6 +1,6 @@
-# Instructions
+# Introduction
 
-This section will help to spin up Authup on the **host** system.
+This section will help you to spin up Authup directly on the **host** system.
 
 ## Requirements
 The following guide is based on some shared assumptions:
@@ -8,6 +8,7 @@ The following guide is based on some shared assumptions:
 - NodeJs `v16` (minimum)
 - Min. `2` cores
 - Min. `5G` hard disk
+- Ports `3000` and `3001` are free
 
 ## Step. 1: Create a new project
 

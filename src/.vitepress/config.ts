@@ -101,6 +101,7 @@ export default defineConfig({
                     items: [
                         {text: 'Bare Metal', link: '/guide/deployment/bare-metal'},
                         {text: 'Docker', link: '/guide/deployment/docker'},
+                        {text: 'Docker Compose', link: '/guide/deployment/docker-compose'},
                     ]
                 },
             ],
