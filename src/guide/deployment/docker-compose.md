@@ -183,7 +183,7 @@ services:
         depends_on:
           - authup-api
         ports:
-            - "3001:3001"
+            - "3001:3000"
         command: ui start
     
     postgres:
