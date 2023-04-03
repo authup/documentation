@@ -1,14 +1,14 @@
-# Instructions
+# Introduction
 
-This section will help to spin up Authup in a **docker** container environment.
+This section will help you spin up Authup as a **docker** container.
 
 ## Requirements
 The following guide is based on some shared assumptions:
 
-- OS `debian` or `ubuntu`
-- Docker `v20.x` is installed
+- Docker `v20.x` is [installed](https://docs.docker.com/get-docker/)
 - Min. `2` cores
 - Min. `5G` hard disk
+- Up to two available ports on the host system if you want to map the services to your local machine (default: `3000` and `3001`)
 
 
 ## Step. 1: Create a new project
