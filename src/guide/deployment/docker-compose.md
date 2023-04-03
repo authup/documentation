@@ -20,7 +20,7 @@ examples show how to configure authup using the options described in the [config
 paste and modify the example you want to use into a `docker-compose.yml` file.
 
 The following example shows a sensible default configuration for getting started with Authup. This will start the REST API as well as the UI from
-the same container and forward them to the ports `3000` and `3001` respectively on the local machine.
+the same container and forward them to the ports `3001` and `3000` respectively on the local machine.
 
 ```yaml
 version: '3.8'
@@ -59,7 +59,7 @@ docker compose logs -f
 
 ## Configuration
 
-The following example show different ways to configure and use the Authup service using docker-compose. For more general
+The following examples show different ways to configure and use the Authup service using docker-compose. For more general
 information about how to configure Authup, see the [configuration](./configuration) section.
 
 ::: warning **Warning**
@@ -163,7 +163,7 @@ services:
         volumes:
             - authup_data:/usr/src/writable
         ports:
-            - "3000:3000"
+            - "3001:3000"
         depends_on:
             - postgres
             - redis
@@ -183,7 +183,7 @@ services:
         depends_on:
           - authup-api
         ports:
-            - "3001:3000"
+            - "3000:3000"
         command: ui start
     
     postgres:
