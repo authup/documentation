@@ -5,7 +5,6 @@ This section will help you set up Authup in a **docker-compose** environment.
 ## Requirements
 The following guide is based on some shared assumptions:
 
-- NodeJs `v16` (minimum)
 - Min. `2` cores
 - Min. `5G` hard disk
 - Docker `v20.x` is [installed](https://docs.docker.com/get-docker/)
@@ -14,14 +13,14 @@ The following guide is based on some shared assumptions:
 
 
 
-## Compose file configuration
+## Quick Start
 
 This section contains multiple examples for how to deploy and configure authup using docker-compose. The different 
 examples show how to configure authup using the options described in the [configuration](./configuration) section. Simply
 paste and modify the example you want to use into a `docker-compose.yml` file.
 
-The following example shows the most basic configuration for authup. It shows two options for configuring where
-authup stores its data. The first option is to use a docker managed volume. The second option is to mount a local directory.
+The following example shows a sensible default configuration for getting started with Authup. This will start the REST API as well as the UI from
+the same container and forward them to the ports `3000` and `3001` respectively on the local machine.
 
 ```yaml
 version: '3.8'
@@ -42,6 +41,7 @@ services:
     ports:
       - "3000:3000"
       - "3001:3001"
+    command: cli start
 
 ```
 
@@ -57,10 +57,24 @@ and check the logs using:
 docker compose logs -f
 ```
 
+## Configuration
 
-## Configuration via environment variables
+The following example show different ways to configure and use the Authup service using docker-compose. For more general
+information about how to configure Authup, see the [configuration](./configuration) section.
 
-The following example shows how to configure the Authup service using environment variables.
+::: warning **Warning**
+When starting more than one service from the same container (such as in the quick start example) you can not use
+environment variable to configure the services. This is because of potential conflicts between the different services.
+
+Instead, you should use a mounted configuration file to configure the services. See the [configuration file](#configuration-file) 
+section for more information.
+:::
+
+
+### Environment variables
+
+The following example shows how to configure the Authup service using environment variables. This will start only the
+REST API and forward it to the port `3000` on the local machine.
 
 ```yaml
 version: '3.8'
@@ -77,22 +91,33 @@ services:
       - authup:/usr/src/writable
     ports:
       - "3000:3000"
-      - "3001:3001"
     environment:
         - ADMIN_USERNAME=test
         - ADMIN_PASSWORD=test-password
 ```
 
 
-## Mounting a configuration file
+### Configuration file
 
-The following example shows how to mount a configuration file into the Authup service achieving the same results as in 
-the previous example with environment variables.
+This example shows how to start both services from the same container with the API being configured with non-default
+values via a mounted configuration file.
 
-```dotenv [authup.conf]
+Create a directory `writable` in the same directory as the `docker-compose.yml` file.
+```bash
+mkdir writable
+cd writable
+```
+Then create a file called `authup.api.conf` and store it in the `writable` directory. Paste the following content into 
+the file which will configure the admin user for the API service:
+
+```dotenv
 adminUsername=test
 adminPassword=test-password
 ```
+
+In the following compose file example you can see that the `writable` directory containing the `authup.api.conf` 
+configuration file is mounted into the container under `/usr/src/writable` which is the default location for 
+configuration files.
 
 ```yaml
 version: '3.8'
@@ -106,19 +131,21 @@ services:
     container_name: authup
     restart: unless-stopped
     volumes:
-      - authup:/usr/src/writable
-      - ./authup.conf/:/usr/src/authup.api.conf
+      - ./writable:/usr/src/writable
     ports:
       - "3000:3000"
       - "3001:3001"
+    command: cli start
 
 ```
 
 
-## Running alongside other services
-This shows an example of how to run authup alongside other services. In this example, the authup service is configured to
-run alongside a postgres database and a redis instance.
+### Multiple services
 
+This shows an example of how to run authup alongside other services (postgres & redis) and connect to them. It also shows how to split 
+Authup into multiple services running the UI and API in separate containers.
+
+Configuration via environment variables is possible in this configuration since both service are running in separate containers.
 
 ```yaml
 version: '3.8'
@@ -129,15 +156,14 @@ volumes:
     redis_data:
 
 services:
-    authup:
+    authup-api:
         image: ghcr.io/authup/authup:latest
-        container_name: authup
+        container_name: authup-api
         restart: unless-stopped
         volumes:
             - authup_data:/usr/src/writable
         ports:
             - "3000:3000"
-            - "3001:3001"
         depends_on:
             - postgres
             - redis
@@ -149,6 +175,17 @@ services:
             - DB_PASSWORD=postgres
             - DB_DATABASE=postgres
             - REDIS_URL=redis://redis:6379
+    
+    authup-ui:
+        image: ghcr.io/authup/authup:latest
+        container_name: authup-ui
+        restart: unless-stopped
+        depends_on:
+          - authup-api
+        ports:
+            - "3001:3001"
+        command: ui start
+    
     postgres:
         image: postgres:14
         container_name: postgres

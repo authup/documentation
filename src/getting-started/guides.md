@@ -1,6 +1,6 @@
 # Guides
-Our user guides are separated into different categories depending on the user's usage intention and. The following
-section provide an overview of the available guides.
+Different user guides are provided depending on the user's usage intention. The following
+section provides an overview of the available guides.
 
 ## User Guide
 A user intends to access & manage resources (user, roles, permissions, ...) via the user interface.
