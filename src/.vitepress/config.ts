@@ -135,9 +135,12 @@ export default defineConfig({
                         {
                             text: 'JavaScript Adapter',
                             items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-adapter'},
-                                { text: 'HTTP', link: '/guide/development/javascript-adapter-http'},
-                                { text: 'Socket', link: '/guide/development/javascript-adapter-socket'},
+                                { text: 'Introduction', link: '/guide/development/javascript-adapter/'},
+                                { text: 'Token Creator', link: '/guide/development/javascript-adapter/token-creator'},
+                                { text: 'Token Verifier', link: '/guide/development/javascript-adapter/token-verifier'},
+                                { text: 'HTTP Interceptor', link: '/guide/development/javascript-adapter/http-interceptor'},
+                                { text: 'HTTP Middleware', link: '/guide/development/javascript-adapter/http-middleware'},
+                                { text: 'Socket Middleware', link: '/guide/development/javascript-adapter/socket-middleware'}
                             ]
                         },
                         {text: 'Python', link: '/guide/development/python'},

@@ -8,6 +8,8 @@ This package provides:
 
 for all other packages of the package collection.
 
+## Installation
+
 Add the package as a dependency to the project.
 
 ```sh
