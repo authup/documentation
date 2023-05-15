@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as o,N as n}from"./chunks/framework.7e203a6d.js";const h=JSON.parse('{"title":"Introduction","description":"","frontmatter":{},"headers":[],"relativePath":"guide/deployment/docker.md"}'),e={name:"guide/deployment/docker.md"},t=n("",24),l=[t];function p(r,c,i,C,d,u){return a(),o("div",null,l)}const A=s(e,[["render",p]]);export{h as __pageData,A as default};
