@@ -3,10 +3,10 @@ export default {
     base: '/',
     themeConfig: {
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/tada5hi/authup' },
+            { icon: 'github', link: 'https://github.com/authup/authup' },
         ],
         editLink: {
-            pattern: 'https://github.com/tada5hi/authup/edit/master/docs/:path',
+            pattern: 'https://github.com/authup/authup/edit/master/docs/:path',
             text: 'Edit this page on GitHub'
         },
         nav: [
