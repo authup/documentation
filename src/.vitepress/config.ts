@@ -29,7 +29,7 @@ export default defineConfig({
                     { text: 'User', link: '/guide/user/'},
                     { text: 'Deployment', link: '/guide/deployment/'},
                     { text: 'Development', link: '/guide/development/'},
-                    // { text: 'Contributing', link: '/guide/contributing/'}
+                    { text: 'Contributing', link: '/guide/contributing/'}
                 ]
             },
             {
@@ -124,20 +124,24 @@ export default defineConfig({
                     text: 'Client Libraries / SDKs',
                     items: [
                         {
-                            text: 'JavaScript',
+                            text: 'JavaScript Core',
                             items: [
-                                { text: 'Introduction', link: '/guide/development/javascript'},
-                                { text: 'API Client', link: '/guide/development/javascript-api-client' },
-                                { text: 'Ability Manager', link: '/guide/development/javascript-ability-manager' },
-                                { text: 'API Reference', link: '/guide/development/javascript-api-reference' },
+                                { text: 'Introduction', link: '/guide/development/javascript-core/'},
+                                { text: 'HTTP Interceptor', link: '/guide/development/javascript-core/http-interceptor'},
+                                { text: 'Token Creator', link: '/guide/development/javascript-core/token-creator'},
+                                { text: 'Token Verifier', link: '/guide/development/javascript-core/token-verifier'},
+                                { text: 'API Client', link: '/guide/development/javascript-core/api-client' },
+                                { text: 'Ability Manager', link: '/guide/development/javascript-core/ability-manager' },
+                                { text: 'API Reference', link: '/guide/development/javascript-core/api-reference' },
+                                { text: 'API Reference Domains', link: '/guide/development/javascript-core/api-reference-domains' },
                             ]
                         },
                         {
-                            text: 'JavaScript Adapter',
+                            text: 'JavaScript ServerAdapter',
                             items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-adapter'},
-                                { text: 'HTTP', link: '/guide/development/javascript-adapter-http'},
-                                { text: 'Socket', link: '/guide/development/javascript-adapter-socket'},
+                                { text: 'Introduction', link: '/guide/development/javascript-server-adapter/'},
+                                { text: 'HTTP Middleware', link: '/guide/development/javascript-server-adapter/http-middleware'},
+                                { text: 'Socket Middleware', link: '/guide/development/javascript-server-adapter/socket-middleware'}
                             ]
                         },
                         {text: 'Python', link: '/guide/development/python'},
@@ -163,7 +167,6 @@ export default defineConfig({
                     text: 'Getting Started',
                     items: [
                         {text: 'Introduction', link: '/guide/contributing/'},
-
                     ]
                 },
             ],

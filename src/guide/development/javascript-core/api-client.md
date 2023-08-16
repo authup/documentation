@@ -43,7 +43,7 @@ const client = new APIClient(/* ... */);
 
 ```
 
-Checkout the [domain](./api-reference-domains.md) section for available APIClients.
+Checkout the [domain](api-reference-domains.md) section for available APIClients.
 
 ## Request & Responses
 
@@ -107,7 +107,7 @@ the api responds with an error payload, which looks like this:
 
 ::: warning Important
 
-The response maybe differs if the [server-core](../contributing/index.md) package is **not** used with the provided error middleware.
+The response maybe differs if the [server-core](../../contributing/index.md) package is **not** used with the provided error middleware.
 
 :::
 
@@ -119,6 +119,6 @@ The response maybe differs if the [server-core](../contributing/index.md) packag
 }
 ```
 
-The error codes can be used to handle each error separately. Check out the [Api Reference](./javascript-api-reference#errorcode) for available error codes.
+The error codes can be used to handle each error separately. Check out the [Api Reference](api-reference.md#errorcode) for available error codes.
 
 
