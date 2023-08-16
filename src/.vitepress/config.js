@@ -1,6 +1,4 @@
-import { defineConfig } from 'vitepress';
-
-export default defineConfig({
+export default {
     title: 'Authup',
     base: '/',
     themeConfig: {
@@ -172,4 +170,4 @@ export default defineConfig({
             ],
         }
     }
-});
+}
