@@ -22,7 +22,7 @@ const router = new Router();
 router.use(createHTTPMiddleware({
     tokenByCookie: (req, cookieName) => req.cookies[cookieName],
     tokenVerifier: {
-        baseUrl: 'http://localhost:3001/',
+        baseURL: 'http://localhost:3001/',
         creator: {
             type: 'user',
             name: 'admin',
@@ -30,7 +30,7 @@ router.use(createHTTPMiddleware({
         },
         cache: {
             type: 'redis',
-            client: createClient({connectionString: 'redis://127.0.0.1'})
+            client: createClient({ connectionString: 'redis://127.0.0.1' })
         }
     },
     tokenVerifierHandler: (req, data) => {

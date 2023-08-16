@@ -9,9 +9,10 @@ The following strategies are built in and can be used as follows.
 
 ```typescript
 import type { TokenCreator } from '@authup/server-adapter';
-import {createTokenCreatorWithUser} from '@authup/server-adapter';
+import { createTokenCreator } from '@authup/server-adapter';
 
-const creator : TokenCreator = createTokenCreatorWithUser({
+const creator : TokenCreator = createTokenCreator({
+    type: 'user',
     name: 'admin',
     password: 'start123'
     // realmId: 'xxx',
@@ -27,9 +28,10 @@ console.log(tokenPayload);
 
 ```typescript
 import type { TokenCreator } from '@authup/server-adapter';
-import { createTokenCreatorWithRobot } from '@authup/server-adapter';
+import { createTokenCreator } from '@authup/server-adapter';
 
-const creator : TokenCreator = createTokenCreatorWithRobot({
+const creator : TokenCreator = createTokenCreator({
+    type: 'robot',
     id: 'xxx',
     secret: 'xxx'
 });
@@ -43,9 +45,10 @@ console.log(tokenPayload);
 
 ```typescript
 import type { TokenCreator } from '@authup/server-adapter';
-import { createTokenCreatorWithRobotInVault } from '@authup/server-adapter';
+import { createTokenCreator } from '@authup/server-adapter';
 
-const creator : TokenCreator = createTokenCreatorWithRobotInVault({
+const creator : TokenCreator = createTokenCreator({
+    type: 'robotInVault',
     name: 'SYSTEM',
     vault: 'start123@http://127.0.0.1:8090/v1/'
 });

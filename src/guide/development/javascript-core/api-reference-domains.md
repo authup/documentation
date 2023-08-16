@@ -33,6 +33,40 @@ interface OAuth2AccessToken {
 }
 ```
 
+## `OAuth2RefreshToken`
+
+**Type**
+```typescript
+import { OAuth2AccessToken, OAuth2Client, Realm } from '@authup/core';
+
+interface OAuth2RefreshToken {
+    id: string;
+
+    expires: string;
+
+    scope: string | null;
+
+    // ------------------------------------------------------------------
+
+    client_id: OAuth2Client['id'] | null;
+
+    client: OAuth2Client | null;
+
+    access_token_id: OAuth2AccessToken['id'] | null;
+
+    access_token: OAuth2AccessToken | null;
+
+    realm_id: Realm['id'];
+
+    realm: Realm;
+}
+```
+
+**References**
+- [OAuth2AccessToken](#oauth2accesstoken)
+- [OAuth2Client](#oauth2client)
+- [Realm](#realm)
+
 **References**
 - [OAuth2Client](#oauth2client)
 - [Realm](#realm)
@@ -69,59 +103,81 @@ interface OAuth2Client {
 **References**
 - [User](#user)
 
-## `OAuth2Provider`
+## `IdentityProvider`
 
 **Type**
 ```typescript
-import { Realm } from '@authup/core';
+import { 
+    IdentityProviderProtocol,
+    IdentityProviderPreset,
+    Realm
+} from '@authup/core';
 
-interface OAuth2Provider {
-    id: string;
+interface IdentityProvider {
+    id: string,
 
-    name: string;
+    name: string,
 
-    open_id: boolean;
+    slug: string;
 
-    client_id: string;
+    protocol: `${IdentityProviderProtocol}` | null;
 
-    client_secret: string;
+    preset: `${IdentityProviderPreset}` | null;
 
-    token_host: string;
+    enabled: boolean;
 
-    token_path: string;
+    created_at: Date | string;
 
-    token_revoke_path: string;
+    updated_at: Date | string;
 
-    authorize_host: string;
-
-    authorize_path: string;
-
-    user_info_host: string;
-
-    user_info_path: string;
-
-    scope: string;
-
-    created_at: Date;
-
-    updated_at: Date;
-
-    realm_id: string;
+    realm_id: Realm['id'];
 
     realm: Realm;
 }
 ```
 
 **References**
+- [IdentityProviderProtocol](#identityproviderprotocol)
+- [IdentityProviderPreset](#identityproviderpreset)
 - [Realm](#realm)
 
-## `OAuth2ProviderAccount`
+## `IdentityProviderProtocol`
+**Type**
+```typescript
+enum IdentityProviderProtocol {
+    LDAP = 'ldap',
+    OAUTH2 = 'oauth2',
+    OIDC = 'oidc',
+}
+```
+
+## `IdentityProviderPreset`
+**Type**
+```typescript
+enum IdentityProviderPreset {
+    FACEBOOK = 'facebook',
+    GITHUB = 'github',
+    GITLAB = 'gitlab',
+    GOOGLE = 'google',
+    PAYPAL = 'paypal',
+    INSTAGRAM = 'instagram',
+    STACKOVERFLOW = 'stackoverflow',
+    TWITTER = 'twitter',
+}
+
+```
+
+## `IdentityProviderAccount`
 
 **Type**
 ```typescript
-import { OAuth2Provider, Realm , User } from '@authup/core';
+import {
+    IdentityProvider, 
+    Realm,
+    User
+} from '@authup/core';
 
-interface OAuth2ProviderAccount {
+interface IdentityProviderAccount {
     id: string;
 
     access_token: string;
@@ -150,21 +206,25 @@ interface OAuth2ProviderAccount {
 
     provider_id: string;
 
-    provider: OAuth2Provider;
+    provider: IdentityProvider;
 }
 ```
 **References**
-- [OAuth2Provider](#oauth2provider)
+- [IdentityProvider](#identityprovider)
 - [Realm](#realm)
 - [User](#user)
 
-## `OAuth2ProviderRole`
+## `IdentityProviderRole`
 
 **Type**
 ```typescript
-import { OAuth2Provider, Realm, Role } from '@authup/core';
+import { 
+    IdentityProvider,
+    Realm, 
+    Role
+} from '@authup/core';
 
-interface OAuth2ProviderRole {
+interface IdentityProviderRole {
     id: string;
 
     external_id: string;
@@ -185,7 +245,7 @@ interface OAuth2ProviderRole {
 
     provider_id: string;
 
-    provider: OAuth2Provider;
+    provider: IdentityProvider;
 
     provider_realm_id: Realm['id'] | null;
 
@@ -194,43 +254,9 @@ interface OAuth2ProviderRole {
 ```
 
 **References**
-- [OAuth2Provider](#oauth2provider)
+- [IdentityProvider](#identityprovider)
 - [Realm](#realm)
 - [Role](#role)
-
-## `OAuth2RefreshToken`
-
-**Type**
-```typescript
-import { OAuth2AccessToken, OAuth2Client, Realm } from '@authup/core';
-
-interface OAuth2RefreshToken {
-    id: string;
-
-    expires: Date;
-
-    scope: string | null;
-
-    // ------------------------------------------------------------------
-
-    client_id: OAuth2Client['id'] | null;
-
-    client: OAuth2Client | null;
-
-    access_token_id: OAuth2AccessToken['id'] | null;
-
-    access_token: OAuth2AccessToken | null;
-
-    realm_id: Realm['id'];
-
-    realm: Realm;
-}
-```
-
-**References**
-- [OAuth2AccessToken](#oauth2accesstoken)
-- [OAuth2Client](#oauth2client)
-- [Realm](#realm)
 
 ## `Permission`
 
@@ -283,7 +309,7 @@ interface Realm {
 
     description: string | null;
 
-    drop_able: boolean;
+    built_in: boolean;
 
     created_at: string;
 
