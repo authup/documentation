@@ -9,9 +9,10 @@ These endpoints can be inspected after starting the application under the `/docs
 Also, client libraries for [JavaScript](../guide/development/javascript-core/)
 and [Python](../guide/development/python.md) provide a way to interact with the architecture in a more secure way.
 
-## Client API
+## Client UI
 
 The client application can be used in addition to the server component and provides easy
 management and interaction with API endpoints of the backend.
-It is based on vue3 and uses the frontend components provided by the vue package, which can also be used in a custom user interface.
-Read more [here](). 
+It is based on vue3 and uses the frontend components provided by the vue package, 
+which can also be used in a custom user interface.
+Read more [here](../guide/development/javascript-client-vue/). 
