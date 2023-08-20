@@ -1,86 +1,17 @@
-# Domains
+# Resource Domain
 
-## `OAuth2AccessToken`
-
-**Type**
-```typescript
-import { OAuth2Client, Realm, Robot, User } from '@authup/core';
-
-interface OAuth2AccessToken {
-    id: string,
-
-    content: string,
-
-    client_id: OAuth2Client['id'] | null,
-
-    client: OAuth2Client | null,
-
-    user_id: User['id'] | null,
-
-    user: User | null,
-
-    robot_id: Robot['id'] | null,
-
-    robot: Robot | null,
-
-    realm_id: Realm['id'],
-
-    realm: Realm,
-
-    expires: Date,
-
-    scope: string | null
-}
-```
-
-## `OAuth2RefreshToken`
-
-**Type**
-```typescript
-import { OAuth2AccessToken, OAuth2Client, Realm } from '@authup/core';
-
-interface OAuth2RefreshToken {
-    id: string;
-
-    expires: string;
-
-    scope: string | null;
-
-    // ------------------------------------------------------------------
-
-    client_id: OAuth2Client['id'] | null;
-
-    client: OAuth2Client | null;
-
-    access_token_id: OAuth2AccessToken['id'] | null;
-
-    access_token: OAuth2AccessToken | null;
-
-    realm_id: Realm['id'];
-
-    realm: Realm;
-}
-```
-
-**References**
-- [OAuth2AccessToken](#oauth2accesstoken)
-- [OAuth2Client](#oauth2client)
-- [Realm](#realm)
-
-**References**
-- [OAuth2Client](#oauth2client)
-- [Realm](#realm)
-- [Robot](#robot)
-- [User](#user)
-
-## `OAuth2Client`
+## `Client`
 
 **Type**
 ```typescript
 import { User } from '@authup/core';
 
-interface OAuth2Client {
+interface Client {
     id: string,
+
+    name: string,
+
+    description: string | null,
 
     secret: string,
 
@@ -90,10 +21,18 @@ interface OAuth2Client {
 
     scope: string | null,
 
+    base_url: string | null,
+
+    root_url: string | null,
+
     is_confidential: boolean
 
     // ------------------------------------------------------------------
 
+    realm_id: Realm['id'],
+
+    realm: Realm,
+    
     user_id: User['id'] | null,
 
     user: User | null
@@ -101,6 +40,7 @@ interface OAuth2Client {
 ```
 
 **References**
+- [Realm](#realm)
 - [User](#user)
 
 ## `IdentityProvider`

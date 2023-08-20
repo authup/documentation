@@ -122,7 +122,7 @@ export default {
                     text: 'Client Libraries / SDKs',
                     items: [
                         {
-                            text: 'JavaScript Core',
+                            text: 'JavaScript',
                             items: [
                                 { text: 'Introduction', link: '/guide/development/javascript-core/'},
                                 { text: 'HTTP Interceptor', link: '/guide/development/javascript-core/http-interceptor'},
@@ -130,29 +130,41 @@ export default {
                                 { text: 'Token Verifier', link: '/guide/development/javascript-core/token-verifier'},
                                 { text: 'API Client', link: '/guide/development/javascript-core/api-client' },
                                 { text: 'Ability Manager', link: '/guide/development/javascript-core/ability-manager' },
-                                { text: 'API Reference', link: '/guide/development/javascript-core/api-reference' },
-                                { text: 'API Reference Domains', link: '/guide/development/javascript-core/api-reference-domains' },
+                                { text: 'API Reference System', link: '/guide/development/javascript-core/api-reference-system' },
+                                { text: 'API Reference Resources', link: '/guide/development/javascript-core/api-reference-resources' },
                             ]
                         },
+
+                        {text: 'Python', link: '/guide/development/python'},
+                    ]
+                },
+                {
+                    text: 'Client Components',
+                    items: [
                         {
-                            text: 'JavaScript ServerAdapter',
+                            text: 'Vue',
+                            items: [
+                                { text: 'Introduction', link: '/guide/development/javascript-client-vue/' },
+                                { text: 'Entities', link: '/guide/development/javascript-client-vue/entities'},
+                                { text: 'Forms', link: '/guide/development/javascript-client-vue/forms'},
+                                { text: 'Lists', link: '/guide/development/javascript-client-vue/lists'},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Server Library/SDKs',
+                    items: [
+                        {
+                            text: 'JavaScript',
                             items: [
                                 { text: 'Introduction', link: '/guide/development/javascript-server-adapter/'},
                                 { text: 'HTTP Middleware', link: '/guide/development/javascript-server-adapter/http-middleware'},
                                 { text: 'Socket Middleware', link: '/guide/development/javascript-server-adapter/socket-middleware'}
                             ]
                         },
-                        {text: 'Python', link: '/guide/development/python'},
                     ]
                 },
-                /*
-                {
-                    text: 'UI Components',
-                    items: [
-                        { text: 'Vue', link: '/guide/development/vue' }  // lists, forms, installation
-                    ]
-                }
-                 */
                 {
                     text: 'API Reference',
                     items: [

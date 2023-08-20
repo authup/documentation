@@ -56,5 +56,51 @@ export enum ErrorCode {
     TOKEN_SCOPE_INVALID = 'invalid_scope',
     TOKEN_SUB_KIND_INVALID = 'invalid_token_sub_kind',
 }
-
 ```
+
+## `OAuth2RefreshToken`
+
+**Type**
+```typescript
+import {
+    OAuth2AccessToken,
+    Client,
+    Realm,
+    Robot,
+    User 
+} from '@authup/core';
+
+interface OAuth2RefreshToken {
+    id: string;
+
+    expires: string;
+
+    scope: string | null;
+
+    // ------------------------------------------------------------------
+
+    client_id: Client['id'] | null;
+
+    client: Client | null;
+
+    user_id: User['id'] | null,
+
+    user: User | null,
+
+    robot_id: Robot['id'] | null,
+
+    robot: Robot | null,
+
+    access_token: string | null;
+
+    realm_id: Realm['id'];
+
+    realm: Realm;
+}
+```
+
+**References**
+- [Client](api-reference-resources.md#client)
+- [Realm](api-reference-resources.md#realm)
+- [Robot](api-reference-resources.md#robot)
+- [User](api-reference-resources.md#user)
