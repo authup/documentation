@@ -18,7 +18,7 @@ import {
 import {
     DataSource,
     DataSourceOptions
-e} from 'typeorm';
+} from 'typeorm';
 
 (async () => {
     const options : DataSourceOptions = {
