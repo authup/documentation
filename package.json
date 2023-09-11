@@ -29,7 +29,7 @@
         "typescript": "^5.1.6"
     },
     "dependencies": {
-        "vitepress": "^1.0.0-rc.4",
+        "vitepress": "^1.0.0-rc.12",
         "vue": "^3.3.4"
     }
 }
