@@ -1,4 +1,5 @@
-export default {
+import { defineConfig } from 'vitepress'
+export default defineConfig({
     title: 'Authup',
     base: '/',
     themeConfig: {
@@ -145,9 +146,9 @@ export default {
                             text: 'Vue',
                             items: [
                                 { text: 'Introduction', link: '/guide/development/javascript-client-vue/' },
-                                { text: 'Entities', link: '/guide/development/javascript-client-vue/entities'},
+                                { text: 'Records', link: '/guide/development/javascript-client-vue/records'},
                                 { text: 'Forms', link: '/guide/development/javascript-client-vue/forms'},
-                                { text: 'Lists', link: '/guide/development/javascript-client-vue/lists'},
+                                { text: 'Collections', link: '/guide/development/javascript-client-vue/collections'},
                             ]
                         }
                     ]
@@ -182,4 +183,4 @@ export default {
             ],
         }
     }
-}
+})

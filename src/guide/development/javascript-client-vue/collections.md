@@ -12,7 +12,7 @@ The package contains a **list** component for the following resources:
 - **RoleList**
 - **ScopeList**
 - **ScopeClientList**
-- **UserList**
+- **AUsers**
 
 `Assignment`
 - **IdentityProviderRoleAssignmentList**
@@ -33,18 +33,18 @@ The package contains a **list** component for the following resources:
 <script>
     import { defineComponent } from 'vue';
     import { 
-        ListSearch,
-        ListTitle,
-        ListPagination,
-        UserList 
+        ASearch,
+        ATitle,
+        APagination,
+        AUsers 
     } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            ListSearch,
-            ListTitle,
-            ListPagination,
-            UserList
+            ASearch,
+            ATitle,
+            APagination,
+            AUsers
         },
         setup() {
             const query = {
@@ -64,18 +64,18 @@ The package contains a **list** component for the following resources:
     })
 </script>
 <template>
-    <UserList :query="query">
+    <AUsers :query="query">
         <template #header="props">
-            <ListHeader text="UserList" />
+            <ListHeader text="AUsers" />
 
-            <ListSearch
+            <ASearch
                 :busy="props.busy"
                 :load="props.load"
                 :meta="props.meta"
             />
         </template>
         <template #footer="props">
-            <ListPagination
+            <APagination
                 :busy="props.busy"
                 :load="props.load"
                 :meta="props.meta"
@@ -90,7 +90,7 @@ The package contains a **list** component for the following resources:
                 </template>
             </ul>
         </template>
-    </UserList>
+    </AUsers>
 </template>
 ```
 
@@ -133,16 +133,16 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserList } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserList
+            AUsers
         }
     })
 </script>
 <template>
-    <UserList>
+    <AUsers>
         <template #body="props">
             <ul>
                 <template v-for="entity in props.data" :key="entity.id">
@@ -152,7 +152,7 @@ Visit the documentation for more details about the parameters and the scheme.
                 </template>
             </ul>
         </template>
-    </UserList>
+    </AUsers>
 </template>
 ```
 
@@ -161,16 +161,16 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserList } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserList
+            AUsers
         }
     })
 </script>
 <template>
-    <UserList>
+    <AUsers>
         <template #header="props">
             <button
                 type="button"
@@ -180,7 +180,7 @@ Visit the documentation for more details about the parameters and the scheme.
                 Refresh
             </button>
         </template>
-    </UserList>
+    </AUsers>
 </template>
 ```
 
@@ -189,16 +189,16 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserList } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserList
+            AUsers
         }
     })
 </script>
 <template>
-    <UserList>
+    <AUsers>
         <template #footer="props">
             <button
                 type="button"
@@ -208,7 +208,7 @@ Visit the documentation for more details about the parameters and the scheme.
                 Refresh
             </button>
         </template>
-    </UserList>
+    </AUsers>
 </template>
 ```
 
@@ -217,20 +217,20 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserList } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserList
+            AUsers
         }
     })
 </script>
 <template>
-    <UserList>
+    <AUsers>
         <template #loading="props">
             Loading resources...
         </template>
-    </UserList>
+    </AUsers>
 </template>
 ```
 
@@ -240,19 +240,19 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserList } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserList
+            AUsers
         }
     })
 </script>
 <template>
-    <UserList>
+    <AUsers>
         <template #no-more="props">
             No more resources available...
         </template>
-    </UserList>
+    </AUsers>
 </template>
 ```

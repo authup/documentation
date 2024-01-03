@@ -1,20 +1,20 @@
-# Entities
+# Records
 
-The package contains a **entity** component for the following resources:
+The package contains a **record** component for the following resources:
 
 `General`
-- **ClientEntity**
-- **ClientScopeEntity**
-- **IdentityProviderEntity**
-- **PermissionEntity**
-- **RealmEntity**
-- **RobotEntity**
-- **RoleEntity**
-- **ScopeEntity**
-- **ScopeClientEntity**
-- **UserEntity**
+- **AClient**
+- **AClientScope**
+- **AIdentityProvider**
+- **APermission**
+- **ARealm**
+- **ARobot**
+- **ARole**
+- **AScope**
+- **AScopeClient**
+- **AUser**
 
-These entities always represent a single resource. 
+These components always represent a single resource record. 
 The criteria under which this can be requested by the API can be defined
 with the help of component [props](#props).
 
@@ -29,11 +29,11 @@ The entity prop can be used to directly provide the object instead of getting it
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserEntity } from '@authup/client-vue';
+    import { Auser } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserEntity
+            Auser
         },
         setup() {
             const entity = {
@@ -49,9 +49,9 @@ The entity prop can be used to directly provide the object instead of getting it
     })
 </script>
 <template>
-    <UserEntity :entity="entity">
+    <Auser :entity="entity">
         <!-- content -->
-    </UserEntity>
+    </Auser>
 </template>
 ```
 
@@ -63,11 +63,11 @@ The entityId prop can be used to fetch a resource by its identifier from the API
 
 <script>
     import { defineComponent } from 'vue';
-    import { UserEntity } from '@authup/client-vue';
+    import { Auser } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserEntity
+            Auser
         },
         setup() {
             const id = 'xxx';
@@ -79,9 +79,9 @@ The entityId prop can be used to fetch a resource by its identifier from the API
     })
 </script>
 <template>
-    <UserEntity :entity-id="id">
+    <Auser :entity-id="id">
         <!-- content -->
-    </UserEntity>
+    </Auser>
 </template>
 ```
 
