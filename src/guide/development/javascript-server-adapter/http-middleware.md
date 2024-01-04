@@ -7,7 +7,7 @@ It calls a callback function with general information (realm, abilities, ...) an
 
 ## Configuration
 
-The `craeteHTTPMiddleware` method, accepts a configuration object.
+The `createHTTPMiddleware` method, accepts a configuration object.
 The redis client, if enabled, is used to cache verification responses from the backend service.
 
 ```typescript
