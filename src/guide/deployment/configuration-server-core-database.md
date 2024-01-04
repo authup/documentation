@@ -9,7 +9,7 @@ superior performance, scalability and advanced features such as built-in replica
 The environment variables in the .env file variant can also be provided via runtime environment.
 ::: code-group
 
-```typescript{4-11} [authup.api.ts]
+```typescript{3-10} [authup.server.core.ts]
 
 export default {
     // ...
@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-```dotenv [authup.api.conf]
+```dotenv [authup.server.core.conf]
 db.type=mysql
 db.host=127.0.0.1
 db.port=3306
@@ -50,7 +50,7 @@ The environment variables in the .env file variant can also be provided via runt
 
 ::: code-group
 
-```typescript{4-11} [authup.api.ts]
+```typescript{3-10} [authup.server.core.ts]
 
 export default {
     // ...
@@ -66,7 +66,7 @@ export default {
 }
 ```
 
-```dotenv [authup.api.conf]
+```dotenv [authup.server.core.conf]
 db.type=postgres
 db.host=127.0.0.1
 db.port=5432

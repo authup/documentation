@@ -10,5 +10,5 @@ Due to the fact that authup consists of several components, they can be configur
 
 ## Component-Wise
 
-- [API](./configuration-api.md) This page describes the configuration of the API service.
-- [UI](./configuration-ui.md) This page describes the configuration of the UI service.
+- [server/core](./configuration-server-core) This page describes the configuration of the main backend service.
+- [client/web](./configuration-client-web) This page describes the configuration of the main frontend service.

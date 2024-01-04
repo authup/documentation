@@ -82,17 +82,17 @@ export default defineConfig({
                     items: [
                         {text: 'Introduction', link: '/guide/deployment/configuration'},
                         {
-                            text: 'API',
-                            link: '/guide/deployment/configuration-api',
+                            text: 'server:core',
+                            link: '/guide/deployment/configuration-server-core',
                             items: [
-                                { text: 'General', link: '/guide/deployment/configuration-api' },
-                                { text: 'Database', link: '/guide/deployment/configuration-api-database' },
-                                { text: 'Redis', link: '/guide/deployment/configuration-api-redis' },
-                                { text: 'SMTP', link: '/guide/deployment/configuration-api-smtp' },
-                                { text: 'Vault', link: '/guide/deployment/configuration-api-vault' }
+                                { text: 'General', link: '/guide/deployment/configuration-server-core' },
+                                { text: 'Database', link: '/guide/deployment/configuration-server-core-database' },
+                                { text: 'Redis', link: '/guide/deployment/configuration-server-core-redis' },
+                                { text: 'SMTP', link: '/guide/deployment/configuration-server-core-smtp' },
+                                { text: 'Vault', link: '/guide/deployment/configuration-server-core-vault' }
                             ]
                         },
-                        {text: 'UI', link: '/guide/deployment/configuration-ui'}
+                        {text: 'client:web', link: '/guide/deployment/configuration-client-web'}
                     ]
                 },
                 {

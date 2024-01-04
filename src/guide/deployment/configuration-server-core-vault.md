@@ -13,7 +13,7 @@ The environment variables in the .env file variant can also be provided via runt
 
 ::: code-group
 
-```typescript{4-7} [authup.api.ts]
+```typescript{4-7} [authup.server.core.ts]
 
 export default {
     // ...
@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-```dotenv [authup.api.conf]
+```dotenv [authup.server.core.conf]
 vault=start123@http://127.0.0.1:8090/v1/
 ```
 

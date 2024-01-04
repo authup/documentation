@@ -1,13 +1,13 @@
 # Configuration
 
 The UI configuration can be provided in different file formats, 
-such as `authup.ui.{conf,js,ts,...}`.
+such as `authup.client.web.{conf,js,ts,...}`.
 
 The environment variables in the .env file variant can also be provided via runtime environment.
 
 ::: code-group
 
-```typescript [authup.api.ts]
+```typescript [authup.client.web.ts]
 
 export default {
     /**
@@ -29,7 +29,7 @@ export default {
 }
 ```
 
-```dotenv [authup.ui.conf]
+```dotenv [authup.client.web.conf]
 env=production
 port=3000
 apiUrl=http://localhost:3001
@@ -37,7 +37,7 @@ publicUrl=http://localhost:3000
 
 ```
 
-````dotenv [authup.ui.conf]
+````dotenv [.env]
 NODE_ENV=production
 PORT=3000
 API_URL=http://localhost:3001
