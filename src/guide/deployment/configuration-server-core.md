@@ -7,7 +7,7 @@ The environment variables in the .env file variant can also be provided via runt
 
 ::: code-group
 
-```typescript [authup.api.ts]
+```typescript [authup.server.core.ts]
 
 export default {
     /**
@@ -70,7 +70,7 @@ export default {
 }
 ```
 
-```dotenv [authup.api.conf]
+```dotenv [authup.server.core.conf]
 port=3001
 publicUrl=http://localhost:3001
 authorizeRedirectUrl=http://localhost:3000

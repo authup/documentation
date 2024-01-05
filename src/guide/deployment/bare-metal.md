@@ -81,6 +81,5 @@ i Server: Started http server.
 Now all should be set up, and you are ready to go :tada:
 
 This will lunch the following application with default settings:
-- UI: `http://127.0.0.1:3000/`
-- API: `http://127.0.0.1:3001/`
-- Docs: `http://127.0.0.1:3001/docs`
+- Frontend (client/web): `http://127.0.0.1:3000/`
+- Backend (server/core): `http://127.0.0.1:3001/`

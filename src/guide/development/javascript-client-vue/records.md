@@ -1,20 +1,20 @@
-# Entities
+# Records
 
-The package contains a **entity** component for the following resources:
+The package contains a **record** component for the following resources:
 
 `General`
-- **ClientEntity**
-- **ClientScopeEntity**
-- **IdentityProviderEntity**
-- **PermissionEntity**
-- **RealmEntity**
-- **RobotEntity**
-- **RoleEntity**
-- **ScopeEntity**
-- **ScopeClientEntity**
-- **UserEntity**
+- **AClient**
+- **AClientScope**
+- **AIdentityProvider**
+- **APermission**
+- **ARealm**
+- **ARobot**
+- **ARole**
+- **AScope**
+- **AScopeClient**
+- **AUser**
 
-These entities always represent a single resource. 
+These components always represent a single resource record. 
 The criteria under which this can be requested by the API can be defined
 with the help of component [props](#props).
 
@@ -29,11 +29,11 @@ The entity prop can be used to directly provide the object instead of getting it
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserEntity } from '@authup/client-vue';
+    import { AUser } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserEntity
+            AUser
         },
         setup() {
             const entity = {
@@ -49,9 +49,9 @@ The entity prop can be used to directly provide the object instead of getting it
     })
 </script>
 <template>
-    <UserEntity :entity="entity">
+    <AUser :entity="entity">
         <!-- content -->
-    </UserEntity>
+    </AUser>
 </template>
 ```
 
@@ -63,11 +63,11 @@ The entityId prop can be used to fetch a resource by its identifier from the API
 
 <script>
     import { defineComponent } from 'vue';
-    import { UserEntity } from '@authup/client-vue';
+    import { AUser } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserEntity
+            AUser
         },
         setup() {
             const id = 'xxx';
@@ -79,9 +79,9 @@ The entityId prop can be used to fetch a resource by its identifier from the API
     })
 </script>
 <template>
-    <UserEntity :entity-id="id">
+    <AUser :entity-id="id">
         <!-- content -->
-    </UserEntity>
+    </AUser>
 </template>
 ```
 
@@ -93,11 +93,11 @@ The queryFilters prop can be used to fetch a resource by **one** or **multiple**
 
 <script>
     import { defineComponent } from 'vue';
-    import { UserEntity } from '@authup/client-vue';
+    import { AUser } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserEntity
+            AUser
         },
         setup() {
             const queryFilters = {
@@ -111,9 +111,9 @@ The queryFilters prop can be used to fetch a resource by **one** or **multiple**
     })
 </script>
 <template>
-    <UserEntity :query-filters="queryFilters">
+    <AUser :query-filters="queryFilters">
         <!-- content -->
-    </UserEntity>
+    </AUser>
 </template>
 ```
 
@@ -126,11 +126,11 @@ as it only reduces the field set or includes fields that are not returned by def
 
 <script>
     import { defineComponent } from 'vue';
-    import { UserEntity } from '@authup/client-vue';
+    import { AUser } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserEntity
+            AUser
         },
         setup() {
             const queryFilters = {
@@ -147,12 +147,12 @@ as it only reduces the field set or includes fields that are not returned by def
     })
 </script>
 <template>
-    <UserEntity 
+    <AUser 
         :query-filters="queryFilters" 
         :query-fields="queryFields"
     >
         <!-- content -->
-    </UserEntity>
+    </AUser>
 </template>
 ```
 
@@ -165,12 +165,12 @@ The slot argument is of type EntityManagerSlotProps.
 
 ```vue
 <template>
-    <UserEntity :entity-id="id">
+    <AUser :entity-id="id">
         <template #default="props">
             <!-- Display the entity props -->
             {{props.data}}
         </template>
-    </UserEntity>
+    </AUser>
 </template>
 ```
 
@@ -180,13 +180,13 @@ The error slot is rendered when the entity resolved with an error.
 
 ```vue
 <template>
-    <UserEntity :entity-id="id">
+    <AUser :entity-id="id">
         <template #error="error">
             {{ error.message }}
             <!-- The entity could not be resolved -->
         </template>
         <!-- content -->
-    </UserEntity>
+    </AUser>
 </template>
 ```
 

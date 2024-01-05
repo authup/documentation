@@ -3,19 +3,19 @@
 The package contains a **form** component for the following resources:
 
 `General`
-- **ClientForm**
-- **ClientScopeForm**
-- **IdentityProviderForm**
-- **PermissionForm**
-- **RealmForm**
-- **RobotForm**
-- **RoleForm**
-- **ScopeForm**
-- **ScopeClientForm**
-- **UserForm**
+- **AClientForm**
+- **AClientScopeForm**
+- **AIdentityProviderForm**
+- **APermissionForm**
+- **ARealmForm**
+- **ARobotForm**
+- **ARoleForm**
+- **AScopeForm**
+- **AScopeClientForm**
+- **AUserForm**
 
 These forms always represent a single resource.
-They have the same component [props](entities.md#props) as the [entity](entities.md) components.
+They have the same component [props](records#props) as the [entity](records) components.
 
 ## Usage
 
@@ -24,11 +24,11 @@ If the entity prop has no id parameter, the object is seen as a template for the
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { UserForm } from '@authup/client-vue';
+    import { AUserForm } from '@authup/client-vue';
 
     export default defineComponent({
         components: {
-            UserForm
+            AUserForm
         },
         setup() {
             const entity = {
@@ -59,13 +59,13 @@ If the entity prop has no id parameter, the object is seen as a template for the
     })
 </script>
 <template>
-    <UserForm 
+    <AUserForm 
         :entity="entity"
         @updated="handleUpdated"
         @created="handleCreated"
         @failed="handleFailed"
     >
         <!-- content -->
-    </UserForm>
+    </AUserForm>
 </template>
 ```
