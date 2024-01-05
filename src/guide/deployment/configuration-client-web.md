@@ -1,5 +1,6 @@
 # Configuration
 
+
 The UI configuration can be provided using environment variables.
 
 ::: code-group
