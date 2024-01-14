@@ -1,0 +1,59 @@
+import{_ as s,o as a,c as n,R as l}from"./chunks/framework.8k-_6wIf.js";const u=JSON.parse('{"title":"HTTP Middleware","description":"","frontmatter":{},"headers":[],"relativePath":"guide/development/javascript-server-adapter/http-middleware.md","filePath":"guide/development/javascript-server-adapter/http-middleware.md"}'),p={name:"guide/development/javascript-server-adapter/http-middleware.md"},e=l(`<h1 id="http-middleware" tabindex="-1">HTTP Middleware <a class="header-anchor" href="#http-middleware" aria-label="Permalink to &quot;HTTP Middleware&quot;">​</a></h1><p>The http middleware should be injected at the beginning of the chain.</p><p>The middleware is used to validate the bearer token by authorization header (or by cookie). It calls a callback function with general information (realm, abilities, ...) and information about the corresponding robot or user of the token.</p><h2 id="configuration" tabindex="-1">Configuration <a class="header-anchor" href="#configuration" aria-label="Permalink to &quot;Configuration&quot;">​</a></h2><p>The <code>createHTTPMiddleware</code> method, accepts a configuration object. The redis client, if enabled, is used to cache verification responses from the backend service.</p><div class="language-typescript vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">typescript</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { Router } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;routup&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { createHTTPMiddleware } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;@authup/server-adapter&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#F97583;">import</span><span style="color:#E1E4E8;"> { createClient } </span><span style="color:#F97583;">from</span><span style="color:#E1E4E8;"> </span><span style="color:#9ECBFF;">&#39;redis-extension&#39;</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">// setup router</span></span>
+<span class="line"><span style="color:#F97583;">const</span><span style="color:#E1E4E8;"> </span><span style="color:#79B8FF;">router</span><span style="color:#E1E4E8;"> </span><span style="color:#F97583;">=</span><span style="color:#E1E4E8;"> </span><span style="color:#F97583;">new</span><span style="color:#E1E4E8;"> </span><span style="color:#B392F0;">Router</span><span style="color:#E1E4E8;">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">// setup socket middleware for socket server</span></span>
+<span class="line"><span style="color:#E1E4E8;">router.</span><span style="color:#B392F0;">use</span><span style="color:#E1E4E8;">(</span><span style="color:#B392F0;">createHTTPMiddleware</span><span style="color:#E1E4E8;">({</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">tokenByCookie</span><span style="color:#E1E4E8;">: (</span><span style="color:#FFAB70;">req</span><span style="color:#E1E4E8;">, </span><span style="color:#FFAB70;">cookieName</span><span style="color:#E1E4E8;">) </span><span style="color:#F97583;">=&gt;</span><span style="color:#E1E4E8;"> req.cookies[cookieName],</span></span>
+<span class="line"><span style="color:#E1E4E8;">    tokenVerifier: {</span></span>
+<span class="line"><span style="color:#E1E4E8;">        baseURL: </span><span style="color:#9ECBFF;">&#39;http://localhost:3001/&#39;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">        creator: {</span></span>
+<span class="line"><span style="color:#E1E4E8;">            type: </span><span style="color:#9ECBFF;">&#39;user&#39;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">            name: </span><span style="color:#9ECBFF;">&#39;admin&#39;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">            password: </span><span style="color:#9ECBFF;">&#39;start123&#39;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">        },</span></span>
+<span class="line"><span style="color:#E1E4E8;">        cache: {</span></span>
+<span class="line"><span style="color:#E1E4E8;">            type: </span><span style="color:#9ECBFF;">&#39;redis&#39;</span><span style="color:#E1E4E8;">,</span></span>
+<span class="line"><span style="color:#E1E4E8;">            client: </span><span style="color:#B392F0;">createClient</span><span style="color:#E1E4E8;">({ connectionString: </span><span style="color:#9ECBFF;">&#39;redis://127.0.0.1&#39;</span><span style="color:#E1E4E8;"> })</span></span>
+<span class="line"><span style="color:#E1E4E8;">        }</span></span>
+<span class="line"><span style="color:#E1E4E8;">    },</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#B392F0;">tokenVerifierHandler</span><span style="color:#E1E4E8;">: (</span><span style="color:#FFAB70;">req</span><span style="color:#E1E4E8;">, </span><span style="color:#FFAB70;">data</span><span style="color:#E1E4E8;">) </span><span style="color:#F97583;">=&gt;</span><span style="color:#E1E4E8;"> {</span></span>
+<span class="line"><span style="color:#E1E4E8;">        console.</span><span style="color:#B392F0;">log</span><span style="color:#E1E4E8;">(data);</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#6A737D;">// { &#39;realmId&#39;: &#39;xxx&#39;, userId: &#39;xxx&#39;, userName: &#39;xxx&#39;, ... }</span></span>
+<span class="line"><span style="color:#E1E4E8;">    }</span></span>
+<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#6A737D;">/* ... */</span></span>
+<span class="line"><span style="color:#E1E4E8;">}));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8;">router.</span><span style="color:#B392F0;">listen</span><span style="color:#E1E4E8;">(</span><span style="color:#79B8FF;">3000</span><span style="color:#E1E4E8;">);</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { Router } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;routup&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { createHTTPMiddleware } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;@authup/server-adapter&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"><span style="color:#D73A49;">import</span><span style="color:#24292E;"> { createClient } </span><span style="color:#D73A49;">from</span><span style="color:#24292E;"> </span><span style="color:#032F62;">&#39;redis-extension&#39;</span><span style="color:#24292E;">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">// setup router</span></span>
+<span class="line"><span style="color:#D73A49;">const</span><span style="color:#24292E;"> </span><span style="color:#005CC5;">router</span><span style="color:#24292E;"> </span><span style="color:#D73A49;">=</span><span style="color:#24292E;"> </span><span style="color:#D73A49;">new</span><span style="color:#24292E;"> </span><span style="color:#6F42C1;">Router</span><span style="color:#24292E;">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;">// setup socket middleware for socket server</span></span>
+<span class="line"><span style="color:#24292E;">router.</span><span style="color:#6F42C1;">use</span><span style="color:#24292E;">(</span><span style="color:#6F42C1;">createHTTPMiddleware</span><span style="color:#24292E;">({</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">tokenByCookie</span><span style="color:#24292E;">: (</span><span style="color:#E36209;">req</span><span style="color:#24292E;">, </span><span style="color:#E36209;">cookieName</span><span style="color:#24292E;">) </span><span style="color:#D73A49;">=&gt;</span><span style="color:#24292E;"> req.cookies[cookieName],</span></span>
+<span class="line"><span style="color:#24292E;">    tokenVerifier: {</span></span>
+<span class="line"><span style="color:#24292E;">        baseURL: </span><span style="color:#032F62;">&#39;http://localhost:3001/&#39;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">        creator: {</span></span>
+<span class="line"><span style="color:#24292E;">            type: </span><span style="color:#032F62;">&#39;user&#39;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">            name: </span><span style="color:#032F62;">&#39;admin&#39;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">            password: </span><span style="color:#032F62;">&#39;start123&#39;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">        },</span></span>
+<span class="line"><span style="color:#24292E;">        cache: {</span></span>
+<span class="line"><span style="color:#24292E;">            type: </span><span style="color:#032F62;">&#39;redis&#39;</span><span style="color:#24292E;">,</span></span>
+<span class="line"><span style="color:#24292E;">            client: </span><span style="color:#6F42C1;">createClient</span><span style="color:#24292E;">({ connectionString: </span><span style="color:#032F62;">&#39;redis://127.0.0.1&#39;</span><span style="color:#24292E;"> })</span></span>
+<span class="line"><span style="color:#24292E;">        }</span></span>
+<span class="line"><span style="color:#24292E;">    },</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6F42C1;">tokenVerifierHandler</span><span style="color:#24292E;">: (</span><span style="color:#E36209;">req</span><span style="color:#24292E;">, </span><span style="color:#E36209;">data</span><span style="color:#24292E;">) </span><span style="color:#D73A49;">=&gt;</span><span style="color:#24292E;"> {</span></span>
+<span class="line"><span style="color:#24292E;">        console.</span><span style="color:#6F42C1;">log</span><span style="color:#24292E;">(data);</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#6A737D;">// { &#39;realmId&#39;: &#39;xxx&#39;, userId: &#39;xxx&#39;, userName: &#39;xxx&#39;, ... }</span></span>
+<span class="line"><span style="color:#24292E;">    }</span></span>
+<span class="line"><span style="color:#24292E;">    </span><span style="color:#6A737D;">/* ... */</span></span>
+<span class="line"><span style="color:#24292E;">}));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E;">router.</span><span style="color:#6F42C1;">listen</span><span style="color:#24292E;">(</span><span style="color:#005CC5;">3000</span><span style="color:#24292E;">);</span></span></code></pre></div><p>For more details check out, the <a href="./.html">API Reference</a>.</p>`,7),o=[e];function t(r,c,E,i,y,d){return a(),n("div",null,o)}const h=s(p,[["render",t]]);export{u as __pageData,h as default};
