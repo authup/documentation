@@ -5,22 +5,25 @@ import{_ as s,o as n,c as a,R as l}from"./chunks/framework.8k-_6wIf.js";const h=
 <span class="line"></span>
 <span class="line"><span style="color:#85E89D;">services</span><span style="color:#E1E4E8;">:</span></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#85E89D;">server-core</span><span style="color:#E1E4E8;">:</span></span>
-<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#85E89D;">image</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">ghcr.io/authup/authup:latest</span></span>
-<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#85E89D;">container_name</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">server-core</span></span>
-<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#85E89D;">restart</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">unless-stopped</span></span>
-<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#85E89D;">volumes</span><span style="color:#E1E4E8;">:</span></span>
-<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#6A737D;"># Docker managed volume</span></span>
-<span class="line"><span style="color:#E1E4E8;">      - </span><span style="color:#9ECBFF;">authup:/usr/src/writable</span></span>
-<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#6A737D;"># storage in mounted volume</span></span>
-<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#6A737D;">#- ./writable:/usr/src/writable</span></span>
-<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#85E89D;">ports</span><span style="color:#E1E4E8;">:</span></span>
-<span class="line"><span style="color:#E1E4E8;">      - </span><span style="color:#9ECBFF;">&quot;3001:3000&quot;</span></span>
-<span class="line"><span style="color:#E1E4E8;">    </span><span style="color:#85E89D;">command</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">server/core start</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">image</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">ghcr.io/authup/authup:latest</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">container_name</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">server-core</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">restart</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">unless-stopped</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">volumes</span><span style="color:#E1E4E8;">:</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#6A737D;"># Docker managed volume</span></span>
+<span class="line"><span style="color:#E1E4E8;">        - </span><span style="color:#9ECBFF;">authup:/usr/src/writable</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#6A737D;"># storage in mounted volume</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#6A737D;">#- ./writable:/usr/src/writable</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">ports</span><span style="color:#E1E4E8;">:</span></span>
+<span class="line"><span style="color:#E1E4E8;">        - </span><span style="color:#9ECBFF;">&quot;3001:3000&quot;</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">command</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">server/core start</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E1E4E8;">  </span><span style="color:#85E89D;">client-web</span><span style="color:#E1E4E8;">:</span></span>
 <span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">image</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">ghcr.io/authup/authup:latest</span></span>
 <span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">container_name</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">client-web</span></span>
 <span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">restart</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">unless-stopped</span></span>
+<span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">environment</span><span style="color:#E1E4E8;">:</span></span>
+<span class="line"><span style="color:#E1E4E8;">        - </span><span style="color:#9ECBFF;">NUXT_PUBLIC_API_URL=http://localhost:3001</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;">#optional</span></span>
+<span class="line"><span style="color:#E1E4E8;">        - </span><span style="color:#9ECBFF;">NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;">#optional</span></span>
 <span class="line"><span style="color:#E1E4E8;">      </span><span style="color:#85E89D;">volumes</span><span style="color:#E1E4E8;">:</span></span>
 <span class="line"><span style="color:#E1E4E8;">          </span><span style="color:#6A737D;"># Docker managed volume</span></span>
 <span class="line"><span style="color:#E1E4E8;">          - </span><span style="color:#9ECBFF;">authup:/usr/src/writable</span></span>
@@ -35,22 +38,25 @@ import{_ as s,o as n,c as a,R as l}from"./chunks/framework.8k-_6wIf.js";const h=
 <span class="line"></span>
 <span class="line"><span style="color:#22863A;">services</span><span style="color:#24292E;">:</span></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#22863A;">server-core</span><span style="color:#24292E;">:</span></span>
-<span class="line"><span style="color:#24292E;">    </span><span style="color:#22863A;">image</span><span style="color:#24292E;">: </span><span style="color:#032F62;">ghcr.io/authup/authup:latest</span></span>
-<span class="line"><span style="color:#24292E;">    </span><span style="color:#22863A;">container_name</span><span style="color:#24292E;">: </span><span style="color:#032F62;">server-core</span></span>
-<span class="line"><span style="color:#24292E;">    </span><span style="color:#22863A;">restart</span><span style="color:#24292E;">: </span><span style="color:#032F62;">unless-stopped</span></span>
-<span class="line"><span style="color:#24292E;">    </span><span style="color:#22863A;">volumes</span><span style="color:#24292E;">:</span></span>
-<span class="line"><span style="color:#24292E;">      </span><span style="color:#6A737D;"># Docker managed volume</span></span>
-<span class="line"><span style="color:#24292E;">      - </span><span style="color:#032F62;">authup:/usr/src/writable</span></span>
-<span class="line"><span style="color:#24292E;">      </span><span style="color:#6A737D;"># storage in mounted volume</span></span>
-<span class="line"><span style="color:#24292E;">      </span><span style="color:#6A737D;">#- ./writable:/usr/src/writable</span></span>
-<span class="line"><span style="color:#24292E;">    </span><span style="color:#22863A;">ports</span><span style="color:#24292E;">:</span></span>
-<span class="line"><span style="color:#24292E;">      - </span><span style="color:#032F62;">&quot;3001:3000&quot;</span></span>
-<span class="line"><span style="color:#24292E;">    </span><span style="color:#22863A;">command</span><span style="color:#24292E;">: </span><span style="color:#032F62;">server/core start</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">image</span><span style="color:#24292E;">: </span><span style="color:#032F62;">ghcr.io/authup/authup:latest</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">container_name</span><span style="color:#24292E;">: </span><span style="color:#032F62;">server-core</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">restart</span><span style="color:#24292E;">: </span><span style="color:#032F62;">unless-stopped</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">volumes</span><span style="color:#24292E;">:</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#6A737D;"># Docker managed volume</span></span>
+<span class="line"><span style="color:#24292E;">        - </span><span style="color:#032F62;">authup:/usr/src/writable</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#6A737D;"># storage in mounted volume</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#6A737D;">#- ./writable:/usr/src/writable</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">ports</span><span style="color:#24292E;">:</span></span>
+<span class="line"><span style="color:#24292E;">        - </span><span style="color:#032F62;">&quot;3001:3000&quot;</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">command</span><span style="color:#24292E;">: </span><span style="color:#032F62;">server/core start</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#24292E;">  </span><span style="color:#22863A;">client-web</span><span style="color:#24292E;">:</span></span>
 <span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">image</span><span style="color:#24292E;">: </span><span style="color:#032F62;">ghcr.io/authup/authup:latest</span></span>
 <span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">container_name</span><span style="color:#24292E;">: </span><span style="color:#032F62;">client-web</span></span>
 <span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">restart</span><span style="color:#24292E;">: </span><span style="color:#032F62;">unless-stopped</span></span>
+<span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">environment</span><span style="color:#24292E;">:</span></span>
+<span class="line"><span style="color:#24292E;">        - </span><span style="color:#032F62;">NUXT_PUBLIC_API_URL=http://localhost:3001</span><span style="color:#24292E;"> </span><span style="color:#6A737D;">#optional</span></span>
+<span class="line"><span style="color:#24292E;">        - </span><span style="color:#032F62;">NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000</span><span style="color:#24292E;"> </span><span style="color:#6A737D;">#optional</span></span>
 <span class="line"><span style="color:#24292E;">      </span><span style="color:#22863A;">volumes</span><span style="color:#24292E;">:</span></span>
 <span class="line"><span style="color:#24292E;">          </span><span style="color:#6A737D;"># Docker managed volume</span></span>
 <span class="line"><span style="color:#24292E;">          - </span><span style="color:#032F62;">authup:/usr/src/writable</span></span>
@@ -148,6 +154,9 @@ import{_ as s,o as n,c as a,R as l}from"./chunks/framework.8k-_6wIf.js";const h=
 <span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#85E89D;">image</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">ghcr.io/authup/authup:latest</span></span>
 <span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#85E89D;">container_name</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">client-web</span></span>
 <span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#85E89D;">restart</span><span style="color:#E1E4E8;">: </span><span style="color:#9ECBFF;">unless-stopped</span></span>
+<span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#85E89D;">environment</span><span style="color:#E1E4E8;">:</span></span>
+<span class="line"><span style="color:#E1E4E8;">          - </span><span style="color:#9ECBFF;">NUXT_PUBLIC_API_URL=http://localhost:3001</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;">#optional</span></span>
+<span class="line"><span style="color:#E1E4E8;">          - </span><span style="color:#9ECBFF;">NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000</span><span style="color:#E1E4E8;"> </span><span style="color:#6A737D;">#optional</span></span>
 <span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#85E89D;">depends_on</span><span style="color:#E1E4E8;">:</span></span>
 <span class="line"><span style="color:#E1E4E8;">          - </span><span style="color:#9ECBFF;">server-core</span></span>
 <span class="line"><span style="color:#E1E4E8;">        </span><span style="color:#85E89D;">ports</span><span style="color:#E1E4E8;">:</span></span>
@@ -202,6 +211,9 @@ import{_ as s,o as n,c as a,R as l}from"./chunks/framework.8k-_6wIf.js";const h=
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">image</span><span style="color:#24292E;">: </span><span style="color:#032F62;">ghcr.io/authup/authup:latest</span></span>
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">container_name</span><span style="color:#24292E;">: </span><span style="color:#032F62;">client-web</span></span>
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">restart</span><span style="color:#24292E;">: </span><span style="color:#032F62;">unless-stopped</span></span>
+<span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">environment</span><span style="color:#24292E;">:</span></span>
+<span class="line"><span style="color:#24292E;">          - </span><span style="color:#032F62;">NUXT_PUBLIC_API_URL=http://localhost:3001</span><span style="color:#24292E;"> </span><span style="color:#6A737D;">#optional</span></span>
+<span class="line"><span style="color:#24292E;">          - </span><span style="color:#032F62;">NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000</span><span style="color:#24292E;"> </span><span style="color:#6A737D;">#optional</span></span>
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">depends_on</span><span style="color:#24292E;">:</span></span>
 <span class="line"><span style="color:#24292E;">          - </span><span style="color:#032F62;">server-core</span></span>
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">ports</span><span style="color:#24292E;">:</span></span>
@@ -224,4 +236,4 @@ import{_ as s,o as n,c as a,R as l}from"./chunks/framework.8k-_6wIf.js";const h=
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">container_name</span><span style="color:#24292E;">: </span><span style="color:#032F62;">redis</span></span>
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">restart</span><span style="color:#24292E;">: </span><span style="color:#032F62;">unless-stopped</span></span>
 <span class="line"><span style="color:#24292E;">        </span><span style="color:#22863A;">volumes</span><span style="color:#24292E;">:</span></span>
-<span class="line"><span style="color:#24292E;">            - </span><span style="color:#032F62;">redis_data:/data</span></span></code></pre></div><h2 id="troubleshooting" tabindex="-1">Troubleshooting <a class="header-anchor" href="#troubleshooting" aria-label="Permalink to &quot;Troubleshooting&quot;">​</a></h2><h3 id="authup-not-reachable-for-redirect-in-other-services" tabindex="-1">Authup not reachable for redirect in other services <a class="header-anchor" href="#authup-not-reachable-for-redirect-in-other-services" aria-label="Permalink to &quot;Authup not reachable for redirect in other services&quot;">​</a></h3><p>If you would like to access the Authup instance and your operations require a redirect to the Authup instance, you need to set the <code>PUBLIC_URL</code> environment variable to the service name and port of the Authup service (i.e. <code>authup:3000</code>). This will allow the compose network to resolve the service name to the correct IP address.</p>`,30),e=[o];function t(c,r,E,i,y,u){return n(),a("div",null,e)}const m=s(p,[["render",t]]);export{h as __pageData,m as default};
+<span class="line"><span style="color:#24292E;">            - </span><span style="color:#032F62;">redis_data:/data</span></span></code></pre></div><h2 id="troubleshooting" tabindex="-1">Troubleshooting <a class="header-anchor" href="#troubleshooting" aria-label="Permalink to &quot;Troubleshooting&quot;">​</a></h2><h3 id="authup-not-reachable-for-redirect-in-other-services" tabindex="-1">Authup not reachable for redirect in other services <a class="header-anchor" href="#authup-not-reachable-for-redirect-in-other-services" aria-label="Permalink to &quot;Authup not reachable for redirect in other services&quot;">​</a></h3><p>If you would like to access the Authup instance and your operations require a redirect to the Authup instance, you need to set the <code>PUBLIC_URL</code> environment variable to the service name and port of the Authup service (i.e. <code>authup:3000</code>). This will allow the compose network to resolve the service name to the correct IP address.</p>`,30),e=[o];function t(c,r,E,i,y,u){return n(),a("div",null,e)}const F=s(p,[["render",t]]);export{h as __pageData,F as default};
