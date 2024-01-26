@@ -39,21 +39,21 @@ To start each service, the following command should be executed depending on the
 
 **`API`**
 ```shell
-docker run authup/authup:latest 
-  -v authup:/usr/src/writable
-  -p 3001:3000 # Mount api port 3000 to external port 3001
-  server/core start
+docker run \
+  -v authup:/usr/src/writable \
+  -p 3001:3000 \
+  authup/authup:latest server/core start
 ```
 
 **`UI`**
 ```shell
-docker run authup/authup:latest 
-  -p 3000:3000 # Mount ui port 3000 to external port 3000
-  client/web start
+docker run \
+  -p 3000:3000 \
+  authup/authup:latest client/web start
 ```
 
 Now all should be set up, and you are ready to go :tada:
 
 This will lunch the following application with default settings:
-- UI: `http://127.0.0.1:3000/`
-- API: `http://127.0.0.1:3001/`
+- UI: `http://localhost:3000/`
+- API: `http://localhost:3001/`
