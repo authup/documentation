@@ -30,22 +30,25 @@ volumes:
 
 services:
   server-core:
-    image: ghcr.io/authup/authup:latest
-    container_name: server-core
-    restart: unless-stopped
-    volumes:
-      # Docker managed volume
-      - authup:/usr/src/writable
-      # storage in mounted volume
-      #- ./writable:/usr/src/writable
-    ports:
-      - "3001:3000"
-    command: server/core start
+      image: ghcr.io/authup/authup:latest
+      container_name: server-core
+      restart: unless-stopped
+      volumes:
+        # Docker managed volume
+        - authup:/usr/src/writable
+        # storage in mounted volume
+        #- ./writable:/usr/src/writable
+      ports:
+        - "3001:3000"
+      command: server/core start
 
   client-web:
       image: ghcr.io/authup/authup:latest
       container_name: client-web
       restart: unless-stopped
+      environment:
+        - NUXT_PUBLIC_API_URL=http://localhost:3001 #optional
+        - NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000 #optional
       volumes:
           # Docker managed volume
           - authup:/usr/src/writable
@@ -172,6 +175,9 @@ services:
         image: ghcr.io/authup/authup:latest
         container_name: client-web
         restart: unless-stopped
+        environment:
+          - NUXT_PUBLIC_API_URL=http://localhost:3001 #optional
+          - NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000 #optional
         depends_on:
           - server-core
         ports:
