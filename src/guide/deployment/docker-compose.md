@@ -41,7 +41,9 @@ services:
       ports:
         - "3001:3000"
       command: server/core start
-
+      networks:
+          authup:
+              
   client-web:
       image: ghcr.io/authup/authup:latest
       container_name: client-web
@@ -57,6 +59,19 @@ services:
       ports:
           - "3000:3000"
       command: client/web start
+      networks:
+        authup:
+
+networks:
+    authup:
+        driver: bridge
+        driver_opts:
+            com.docker.network.bridge.name: authup
+        enable_ipv6: true
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.23.1.0/24
 ```
 
 Then start the service using the following command:
@@ -75,6 +90,10 @@ docker compose logs -f
 
 The following examples show different ways to configure and use the Authup service using docker-compose. For more general
 information about how to configure Authup, see the [configuration](./configuration) section.
+
+## Reverse Proxy
+
+It is recommended to operate the services behind a reverse proxy. For example [nginx](./nginx.md).
 
 ### Environment variables
 

@@ -80,7 +80,7 @@ export default defineConfig({
                 {
                     text: 'Configuration',
                     items: [
-                        {text: 'Introduction', link: '/guide/deployment/configuration'},
+                        { text: 'Introduction', link: '/guide/deployment/configuration' },
                         {
                             text: 'server:core',
                             link: '/guide/deployment/configuration-server-core',
@@ -101,6 +101,12 @@ export default defineConfig({
                         {text: 'Bare Metal', link: '/guide/deployment/bare-metal'},
                         {text: 'Docker', link: '/guide/deployment/docker'},
                         {text: 'Docker Compose', link: '/guide/deployment/docker-compose'},
+                    ]
+                },
+                {
+                    text: 'Reverse Proxy',
+                    items: [
+                        { text: 'Nginx', link: '/guide/deployment/nginx' }
                     ]
                 },
             ],

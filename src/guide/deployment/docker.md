@@ -57,3 +57,5 @@ Now all should be set up, and you are ready to go :tada:
 This will lunch the following application with default settings:
 - UI: `http://localhost:3000/`
 - API: `http://localhost:3001/`
+
+It is recommended to operate the services behind a reverse proxy. For example [nginx](./nginx.md).
