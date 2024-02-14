@@ -30,7 +30,8 @@ volumes:
 
 services:
   server-core:
-      image: ghcr.io/authup/authup:latest
+      image: authup/authup:latest
+      pull_policy: always
       container_name: server-core
       restart: unless-stopped
       volumes:
@@ -45,17 +46,15 @@ services:
           authup:
               
   client-web:
-      image: ghcr.io/authup/authup:latest
+      image: authup/authup:latest
+      pull_policy: always
       container_name: client-web
       restart: unless-stopped
+      depends_on:
+          - server-core
       environment:
         - NUXT_PUBLIC_API_URL=http://localhost:3001 #optional
         - NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000 #optional
-      volumes:
-          # Docker managed volume
-          - authup:/usr/src/writable
-          # storage in mounted volume
-          #- ./writable:/usr/src/writable
       ports:
           - "3000:3000"
       command: client/web start
@@ -67,7 +66,6 @@ networks:
         driver: bridge
         driver_opts:
             com.docker.network.bridge.name: authup
-        enable_ipv6: true
         ipam:
             driver: default
             config:
@@ -108,7 +106,7 @@ volumes:
 
 services:
   authup:
-    image: ghcr.io/authup/authup:latest
+    image: authup/authup:latest
     container_name: authup
     restart: unless-stopped
     volumes:
@@ -144,7 +142,7 @@ version: '3.8'
 
 services:
   authup:
-    image: ghcr.io/authup/authup:latest
+    image: authup/authup:latest
     container_name: authup
     restart: unless-stopped
     volumes:
@@ -171,7 +169,7 @@ volumes:
 
 services:
     server-core:
-        image: ghcr.io/authup/authup:latest
+        image: authup/authup:latest
         container_name: server-core
         restart: unless-stopped
         volumes:
@@ -191,7 +189,7 @@ services:
             - REDIS_URL=redis://redis:6379
         command: server/core start
     client-web:
-        image: ghcr.io/authup/authup:latest
+        image: authup/authup:latest
         container_name: client-web
         restart: unless-stopped
         environment:
