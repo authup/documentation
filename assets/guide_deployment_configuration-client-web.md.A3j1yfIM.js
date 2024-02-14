@@ -1,0 +1,11 @@
+import{_ as e,o as a,c as n,R as s}from"./chunks/framework.8k-_6wIf.js";const f=JSON.parse('{"title":"Configuration","description":"","frontmatter":{},"headers":[],"relativePath":"guide/deployment/configuration-client-web.md","filePath":"guide/deployment/configuration-client-web.md"}'),t={name:"guide/deployment/configuration-client-web.md"},o=s(`<h1 id="configuration" tabindex="-1">Configuration <a class="header-anchor" href="#configuration" aria-label="Permalink to &quot;Configuration&quot;">​</a></h1><p>The UI configuration can be provided using environment variables.</p><div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-2Ba7H" id="tab-9nUJXBm" checked="checked"><label for="tab-9nUJXBm">env</label></div><div class="blocks"><div class="language-dotenv vp-adaptive-theme active"><button title="Copy Code" class="copy"></button><span class="lang">dotenv</span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;"># The application port.</span></span>
+<span class="line"><span style="color:#e1e4e8;">PORT=3000</span></span>
+<span class="line"><span style="color:#e1e4e8;"># The address where the API can be reached.</span></span>
+<span class="line"><span style="color:#e1e4e8;">NUXT_PUBLIC_API_URL=http://localhost:3001</span></span>
+<span class="line"><span style="color:#e1e4e8;"># The public url of the user interface.</span></span>
+<span class="line"><span style="color:#e1e4e8;">NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;"># The application port.</span></span>
+<span class="line"><span style="color:#24292e;">PORT=3000</span></span>
+<span class="line"><span style="color:#24292e;"># The address where the API can be reached.</span></span>
+<span class="line"><span style="color:#24292e;">NUXT_PUBLIC_API_URL=http://localhost:3001</span></span>
+<span class="line"><span style="color:#24292e;"># The public url of the user interface.</span></span>
+<span class="line"><span style="color:#24292e;">NUXT_PUBLIC_PUBLIC_URL=http://localhost:3000</span></span></code></pre></div></div></div>`,3),l=[o];function p(c,i,r,d,h,_){return a(),n("div",null,l)}const g=e(t,[["render",p]]);export{f as __pageData,g as default};
