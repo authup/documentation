@@ -3,13 +3,13 @@
 This package is shipped with a management system for permissions,
 which scales between a **claim based** and **subject/attribute based** authorization.
 
-The data ([AbilityDescriptor(s)](api-reference-system.md#abilitydescriptor)) to initialize 
+The data ([Ability(s)](api-reference-system.md#ability)) to initialize 
 the `AbilityManager` can be serialized as json for example and shared between frontend and backend services,
 to provide the same features on both sides.
 
 ---
 
-The **AbilityDescriptors** can be extracted from the Payload of the `/token` endpoint response (`AUTHORIZATION` header **required**)
+The **Abilities** can be extracted from the Payload of the `/token` endpoint response (`AUTHORIZATION` header **required**)
 
 **ResponsePayload**
 
@@ -40,9 +40,9 @@ An ability descriptor describes the permission owned and requires at least the `
 - **Fields**: A string array can be provided to limit the permission on specific fields of the subject.
 
 ```typescript
-import { AbilityDescriptor, AbilityManager } from '@authup/core';
+import { Ability, AbilityManager } from '@authup/core';
 
-const items : AbilityDescriptor[] = [
+const items : Ability[] = [
     { id: 'data_add', condition: { size: { $lte: 5 } } },
     { id: 'data_edit', fields: ['value'] }
 ]
@@ -91,9 +91,9 @@ The list of supported operators:
 To check if a permission is owned in general without any restrictions (conditions or fields), use the `has()` method of the class instance.
 
 ```typescript
-import { AbilityDescriptor, AbilityManager } from '@authup/core';
+import { Ability, AbilityManager } from '@authup/core';
 
-const items : AbilityDescriptor[] = [
+const items : Ability[] = [
     { id: 'data_add', condition: { size: { $lte: 5 } } },
     { id: 'data_edit', fields: ['value'] }
 ]
@@ -116,14 +116,14 @@ To verify a permission **with** condition and field restriction, use the `verify
 Conditions will be evaluated, if an object (subject) is provided as **second** argument to the `verify()` method.
 
 ```typescript
-import { AbilityDescriptor, AbilityManager } from '@authup/core';
+import { Ability, AbilityManager } from '@authup/core';
 
 type Data = {
     value: string,
     size: number
 }
 
-const items : AbilityDescriptor[] = [
+const items : Ability[] = [
     { id: 'data_add', condition: { size: { $lte: 5 } } }
 ]
 
@@ -151,14 +151,14 @@ console.log(abilityManager.verify('data_add', exampleData));
 To verify if the permission applies on a specific field of an object (subject), provide the field name as **third** argument to the `verify()` method.
 
 ```typescript
-import { AbilityDescriptor, AbilityManager } from '@authup/core';
+import { Ability, AbilityManager } from '@authup/core';
 
 type Data = {
     value: string,
     size: number
 }
 
-const items : AbilityDescriptor[] = [
+const items : Ability[] = [
     { id: 'data_edit', fields: ['value'] }
 ]
 
