@@ -114,8 +114,8 @@ services:
     ports:
       - "3001:3000"
     environment:
-        - ADMIN_USERNAME=test
-        - ADMIN_PASSWORD=test-password
+        - USER_ADMIN_NAME=test
+        - USER_ADMIN_PASSWORD=test-password
     command: server/core start
 ```
 
@@ -129,8 +129,8 @@ Create a file called `authup.server.core.conf` and store it in the same director
 the file which will configure the admin user for the API service:
 
 ```dotenv
-ADMIN_USERNAME=test
-ADMIN_PASSWORD=test-password
+USER_ADMIN_NAME=test
+USER_ADMIN_PASSWORD=test-password
 ```
 
 In the following compose file example you can see that the

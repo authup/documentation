@@ -43,30 +43,34 @@ export default {
      * Admin user name.
      * Default: 'admin'
      */
-    adminUsername: 'admin',
+    userAdminName: 'admin',
     /**
      * Admin password.
      * Default: 'start123'
      */
-    adminPassword: 'start123',
+    userAdminPassword: 'start123',
     /**
      * Reset the admin password if it has already
      * been created with a different password.
      */
-    adminPasswordReset: false,
+    userAdminPasswordReset: false,
     /**
      * Enable a global robot account.
      */
-    robotEnabled: false,
+    robotAdminEnabled: false,
     /**
-     * Robot password/secret.
+     * Robot admin name
      */
-    robotSecret: 'foo',
+    robotAdminName: 'system',
+    /**
+     * Robot admin password/secret.
+     */
+    robotAdminSecret: 'foo',
     /**
      * Reset the robot secret if it has already
      * been created with a different password.
      */
-    robotSecretReset: false
+    robotAdminSecretReset: false
 }
 ```
 
@@ -77,12 +81,13 @@ authorizeRedirectUrl=http://localhost:3000
 registration=false
 emailVerification=false
 forgotPassword=false
-adminUsername=admin
-adminPassword=start123
-adminPasswordReset=false
-robotEnabled=false
-robotSecret=foo
-robotSecretReset=false
+userAdminName=admin
+userAdminPassword=start123
+userAdminPasswordReset=false
+robotAdminEnabled=false
+robotAdminName=system
+robotAdminSecret=foo
+robotAdminSecretReset=false
 
 ```
 
@@ -93,12 +98,13 @@ AUTHORIZE_REDIRECT_URL=http://localhost:3000
 REGISTRATION=false
 EMAIL_VERIFICATION=false
 FORGOT_PASSWORD=false
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=start123
-ADMIN_PASSWORD_RESET=false
-ROBOT_ENABLED=false
-ROBOT_SECRET=foo
-ROBOT_SECRET_RESET=false
+USER_ADMIN_NAME=admin
+USER_ADMIN_PASSWORD=start123
+USER_ADMIN_PASSWORD_RESET=false
+ROBOT_ADMIN_ENABLED=false
+ROBOT_ADMIN_NAME=system
+ROBOT_ADMIN_SECRET=foo
+ROBOT_ADMIN_SECRET_RESET=false
 
 ```
 :::
