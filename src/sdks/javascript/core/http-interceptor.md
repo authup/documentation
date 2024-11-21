@@ -10,7 +10,7 @@ a new token is set using the token creator strategy.
 ## Hapic 
 
 ```typescript
-import { mountClientResponseErrorTokenHook } from '@auhtup/core';
+import { mountClientResponseErrorTokenHook } from '@auhtup/core-http-kit';
 import { createClient } from 'hapic';
 
 const client = createClient({

@@ -7,9 +7,9 @@ To configure the API Client, the `baseURL` parameter for the driver config of th
 
 
 ```typescript
-import { APIClient } from '@authup/core';
+import { Client } from '@authup/core-http-kit';
 
-const client = new APIClient({
+const client = new Client({
     driver: {
         baseURL: 'http://127.0.0.1:3010/'
     }
@@ -28,9 +28,9 @@ For example:
 **Realm**: realm
 
 ```typescript
-import { APIClient } from '@authup/core';
+import { Client } from '@authup/core-http-kit';
 
-const client = new APIClient(/* ... */);
+const client = new Client(/* ... */);
 
 (async () => {
     const response = await client.realm.create({
@@ -107,7 +107,7 @@ the api responds with an error payload, which looks like this:
 
 ::: warning Important
 
-The response maybe differs if the [server-core](../../contributing/index.md) package is **not** used with the provided error middleware.
+The response maybe differs if the [server-core](../../../guide/development/contributing.md) package is **not** used with the provided error middleware.
 
 :::
 

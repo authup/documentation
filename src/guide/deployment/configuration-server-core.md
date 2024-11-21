@@ -11,64 +11,124 @@ The environment variables in the .env file variant can also be provided via runt
 
 export default {
     /**
-     * The environment of the application.
+     * Application environment (e.g., 'production').
+     * default: development
      */
     env: 'production',
+    
     /**
-     * The application port.
+     * Application port number.
+     * default: 3001
      */
     port: 3001,
+
     /**
-     * The address where the API can be reached.
+     * Application host.
+     * default: localhost
+     */
+    host: 'localhost',
+    
+    /**
+     * API base URL.
+     * default: http://localhost:3001
      */
     publicUrl: 'http://localhost:3001',
+
     /**
-     * The redirect url to redirect to after successful
-     * login with an external identity provider.
+     * Domain for setting cookies after authorization.
+     */
+    cookieDomain: undefined,
+    
+    /**
+     * Redirect URL after successful login with
+     * external identity provider.
+     * default: http://localhost:3000
      */
     authorizeRedirectUrl: 'http://localhost:3000',
+
+    // ----------------------------------------------------
+
     /**
-     * Enable registration.
+     * Refresh token validity in seconds (default: 259,200s / 3 days).
+     * default: 259_000
+     */
+    tokenRefreshMaxAge: 259_000,
+
+    /**
+     * Access token validity in seconds (default: 3600s / 1 hour).
+     * default: 3_600
+     */
+    tokenAccessMaxAge: 3_600,
+
+    // ----------------------------------------------------
+    
+    /**
+     * Enable user registration?
+     * default: false
      */
     registration: false,
+    
     /**
-     * Email verification required for registration or login with identity provider.
+     * Require email verification for registration or login?
+     * default: false
      */
     emailVerification: false,
+    
     /**
      * Allow password reset via email?
+     * default: false
      */
     forgotPassword: false,
+
+    // ----------------------------------------------------
+
     /**
-     * Admin user name.
-     * Default: 'admin'
+     * Enable default admin user.
+     * default: true
+     */
+    userAdminEnabled: true,
+    
+    /**
+     * The name of the default admin user.
+     * default: 'admin'
      */
     userAdminName: 'admin',
+    
     /**
-     * Admin password.
-     * Default: 'start123'
+     * The password of the default admin user.
+     * default: 'start123'
      */
     userAdminPassword: 'start123',
+    
     /**
-     * Reset the admin password if it has already
-     * been created with a different password.
+     * Reset admin password on application startup.
+     * default: false
      */
     userAdminPasswordReset: false,
+
+    // ----------------------------------------------------
+    
     /**
      * Enable a global robot account.
+     * default: false
      */
     robotAdminEnabled: false,
+    
     /**
-     * Robot admin name
+     * The name of the default robot.
+     * default: system
      */
     robotAdminName: 'system',
+    
     /**
-     * Robot admin password/secret.
+     * The secret of the default admin user.
+     * default: (generated)
      */
     robotAdminSecret: 'foo',
+    
     /**
-     * Reset the robot secret if it has already
-     * been created with a different password.
+     * Reset the robot secret on application startup.
+     * default: false
      */
     robotAdminSecretReset: false
 }

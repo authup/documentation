@@ -1,4 +1,5 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
+
 export default defineConfig({
     title: 'Authup',
     base: '/',
@@ -26,9 +27,16 @@ export default defineConfig({
                 activeMatch: '/guide/',
                 items: [
                     { text: 'User', link: '/guide/user/'},
-                    { text: 'Deployment', link: '/guide/deployment/'},
                     { text: 'Development', link: '/guide/development/'},
-                    { text: 'Contributing', link: '/guide/contributing/'}
+                    { text: 'Deployment', link: '/guide/deployment/'},
+                ]
+            },
+            {
+                text: 'SDKs',
+                activeMatch: '/sdks/',
+                items: [
+                    { text: 'JavaScript', link: '/sdks/javascript/'},
+                    { text: 'Python', link: '/sdks/python/'}
                 ]
             },
             {
@@ -115,67 +123,71 @@ export default defineConfig({
                     text: 'Getting Started',
                     items: [
                         {text: 'Introduction', link: '/guide/development/'},
-                    ]
-                },
-                /*
-                {
-                    text: 'Concepts',
-                    items: [
-                        { text: 'Securing Applications', link: '/guide/development/securing-applications' }
-                    ]
-                },
-                 */
-                {
-                    text: 'Client Libraries / SDKs',
-                    items: [
-                        {
-                            text: 'JavaScript',
-                            items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-core/'},
-                                { text: 'HTTP Interceptor', link: '/guide/development/javascript-core/http-interceptor'},
-                                { text: 'Token Creator', link: '/guide/development/javascript-core/token-creator'},
-                                { text: 'Token Verifier', link: '/guide/development/javascript-core/token-verifier'},
-                                { text: 'API Client', link: '/guide/development/javascript-core/api-client' },
-                                { text: 'Ability Manager', link: '/guide/development/javascript-core/ability-manager' },
-                                { text: 'API Reference System', link: '/guide/development/javascript-core/api-reference-system' },
-                                { text: 'API Reference Resources', link: '/guide/development/javascript-core/api-reference-resources' },
-                            ]
-                        },
-
-                        {text: 'Python', link: '/guide/development/python'},
+                        {text: 'Code of Conduct', link: '/guide/development/code-of-conduct'},
+                        {text: 'Submission Guidelines', link: '/guide/development/submission-guidelines'},
+                        {text: 'Repository Structure', link: '/guide/development/repository-structure'},
+                        {text: 'Quick Start', link: '/guide/development/quick-start'},
                     ]
                 },
                 {
-                    text: 'Client Components',
+                    text: 'Integration',
                     items: [
-                        {
-                            text: 'Vue',
-                            items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-client-vue/' },
-                                { text: 'Records', link: '/guide/development/javascript-client-vue/records'},
-                                { text: 'Forms', link: '/guide/development/javascript-client-vue/forms'},
-                                { text: 'Collections', link: '/guide/development/javascript-client-vue/collections'},
-                            ]
-                        }
+                        { text: 'Introduction', link: '/guide/development/integration'},
+                        { text: 'SKDs', link: '/guide/development/integration/sdks'},
+                        { text: 'Projects (Examples)', link: '/guide/development/integration/projects'}
                     ]
                 },
                 {
-                    text: 'Server Library/SDKs',
+                    text: 'Workflows',
                     items: [
-                        {
-                            text: 'JavaScript',
-                            items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-server-adapter/'},
-                                { text: 'HTTP Middleware', link: '/guide/development/javascript-server-adapter/http-middleware'},
-                                { text: 'Socket Middleware', link: '/guide/development/javascript-server-adapter/socket-middleware'}
-                            ]
-                        },
+                        { text: 'Introduction', link: '/guide/development/workflows'},
+                        { text: 'Securing Applications/OAuth2', link: '/guide/development/workflows/oauth2/'},
+                        { text: 'Error Handling', link: '/guide/development/workflows/error-handling'},
+                    ]
+                },
+            ],
+            '/sdks/python': [
+                {text: 'Python', link: '/sdks/python'},
+            ],
+            '/sdks/javascript/': [
+                {
+                    text: 'HTTP',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/core/'},
+                        { text: 'HTTP Interceptor', link: '/sdks/javascript/core/http-interceptor'},
+                        { text: 'Token Creator', link: '/sdks/javascript/core/token-creator'},
+                        { text: 'Token Verifier', link: '/sdks/javascript/core/token-verifier'},
+                        { text: 'API Client', link: '/sdks/javascript/core/api-client' },
+                    ],
+                },
+                {
+                    text: 'Core',
+                    items: [
+                        { text: 'Ability Manager', link: '/sdks/javascript/core/ability-manager' },
+                        { text: 'API Reference System', link: '/sdks/javascript/core/api-reference-system' },
+                        { text: 'API Reference Resources', link: '/sdks/javascript/core/api-reference-resources' },
                     ]
                 },
                 {
-                    text: 'API Reference',
+                    text: 'Client: Vue',
                     items: [
-                        { text: 'Domains', link: '/guide/development/api-reference-domains'}
+                        { text: 'Introduction', link: '/sdks/javascript/client-vue/' },
+                        { text: 'Records', link: '/sdks/javascript/client-vue/records'},
+                        { text: 'Forms', link: '/sdks/javascript/client-vue/forms'},
+                        { text: 'Collections', link: '/sdks/javascript/client-vue/collections'},
+                    ]
+                },
+                {
+                    text: 'Server: HTTP',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/server-adapter/'},
+                        { text: 'Middleware', link: '/sdks/javascript/server-adapter/http-middleware'},
+                    ]
+                },
+                {
+                    text: 'Server: Socket.io',
+                    items: [
+                        { text: 'Middleware', link: '/sdks/javascript/server-adapter/socket-middleware'}
                     ]
                 }
             ],
@@ -184,6 +196,9 @@ export default defineConfig({
                     text: 'Getting Started',
                     items: [
                         {text: 'Introduction', link: '/guide/contributing/'},
+                        {text: 'Code of Conduct', link: '/guide/contributing/code-of-conduct'},
+                        {text: 'Submission Guidelines', link: '/guide/contributing/submission-guidelines'},
+                        {text: 'Environment', link: '/guide/contributing/environment'},
                     ]
                 },
             ],

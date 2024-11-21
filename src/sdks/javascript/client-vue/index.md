@@ -1,7 +1,7 @@
-# JavaScript
+# Vue
 
 This package provides **lists**, **forms** and **entities** for all 
-[domains](../javascript-core/api-reference-resources.md) of the ecosystem.
+[domains](../core/api-reference-resources.md) of the ecosystem.
 Besides, many other features are also included.
 
 ## Installation
