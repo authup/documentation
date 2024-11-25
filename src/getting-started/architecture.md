@@ -6,7 +6,7 @@ The server component is the heart 🧡 of the authup ecosystem and can be used w
 It provides an HTTP-API interface to interact with various resources.
 
 These endpoints can be inspected after starting the application under the `/docs` endpoint.
-Also, client libraries for [JavaScript](../sdks/javascript/core/)
+Also, client libraries for [JavaScript](../sdks/javascript/kit/)
 and [Python](../sdks/python/index) provide a way to interact with the architecture in a more secure way.
 
 ## Client UI

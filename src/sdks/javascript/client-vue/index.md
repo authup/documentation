@@ -1,7 +1,7 @@
-# Vue
+# Client-Vue
 
 This package provides **lists**, **forms** and **entities** for all 
-[domains](../core/api-reference-resources.md) of the ecosystem.
+[resources](../core-kit/api-reference) of the ecosystem.
 Besides, many other features are also included.
 
 ## Installation
@@ -14,25 +14,7 @@ npm install @authup/client-vue --save-dev
 
 ## Configuration
 
-Create a file `store/authup.ts`.
-
-```typescript
-import { createStore } from '@authup/client-vue';
-import { defineStore } from 'pinia';
-import { useRuntimeConfig } from '#imports';
-
-export const useAuthupStore = defineStore(
-    'auth', 
-    () => {
-        const config = useRuntimeConfig();
-    
-        return createStore({ baseURL: 'http://localhost:3010'});
-    }
-);
-```
-
-### Vue
-Install the plugin in the root file, where creating the application instance is created.
+Create a file in the plugins folder (e.g. `plugins/authup.ts`) to integrate it into the application.
 
 ```typescript
 import { APIClient } from '@authup/core';
@@ -48,25 +30,5 @@ app.use(install, {
         baseURL: 'http://localhost:3010'
     }),
     store: useAuthupStore()
-});
-```
-
-### Nuxt
-
-Create file `plugins/authup.ts` in the root directory of the nuxt application.
-
-```typescript
-import { APIClient } from '@authup/core';
-import { install } from '@authup/client-vue';
-import { useAuthupStore } from '../store/authup';
-import { defineNuxtPlugin } from '#app';
-
-export default defineNuxtPlugin((ctx) => {
-    ctx.vueApp.use(install, {
-        apiClient: new APIClient({
-            baseURL: 'http://localhost:3010'
-        }),
-        store: useAuthupStore()
-    });
 });
 ```

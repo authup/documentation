@@ -3,29 +3,29 @@
 The package contains a **list** component for the following resources:
 
 `General`
-- **ClientList**
-- **ClientScopeList**
-- **IdentityProviderList**
-- **PermissionList**
-- **RealmList**
-- **RobotList**
-- **RoleList**
-- **ScopeList**
-- **ScopeClientList**
+- **Clients**
+- **ClientScopes**
+- **IdentityProviders**
+- **Permissions**
+- **Realms**
+- **Robots**
+- **Roles**
+- **Scopes**
+- **ScopeClients**
 - **AUsers**
 
 `Assignment`
-- **IdentityProviderRoleAssignmentList**
-- **PermissionRobotAssignmentList**
-- **PermissionRoleAssignmentList**
-- **PermissionUserAssignmentList**
-- **RobotPermissionAssignmentList**
-- **RobotRoleAssignmentList**
-- **RolePermissionAssignmentList**
-- **RoleRobotAssignmentList**
-- **RoleUserAssignmentList**
-- **UserPermissionAssignmentList**
-- **UserRoleAssignmentList**
+- **IdentityProviderRoleAssignments**
+- **PermissionRobotAssignments**
+- **PermissionRoleAssignments**
+- **PermissionUserAssignments**
+- **RobotPermissionAssignments**
+- **RobotRoleAssignments**
+- **RolePermissionAssignments**
+- **RoleRobotAssignments**
+- **RoleUserAssignments**
+- **UserPermissionAssignments**
+- **UserRoleAssignments**
 
 ## Usage
 

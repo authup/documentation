@@ -15,30 +15,6 @@ export type Ability<T extends Record<string, any> = Record<string, any>> = {
 };
 ```
 
-## `ErrorCode`
-
-```typescript
-export enum ErrorCode {
-    ABILITY_INVALID = 'invalid_ability',
-
-    HEADER_INVALID = 'invalid_header',
-    HEADER_AUTH_TYPE_UNSUPPORTED = 'unsupported_auth_header_type',
-
-    CREDENTIALS_INVALID = 'invalid_credentials',
-
-    ENTITY_INACTIVE = 'inactive_entity',
-
-    TOKEN_INVALID = 'invalid_token',
-    TOKEN_INACTIVE = 'inactive_token',
-    TOKEN_EXPIRED = 'expired_token',
-    TOKEN_CLIENT_INVALID = 'invalid_client',
-    TOKEN_GRANT_INVALID = 'invalid_grant',
-    TOKEN_GRANT_TYPE_UNSUPPORTED = 'unsupported_token_grant_type',
-    TOKEN_SCOPE_INVALID = 'invalid_scope',
-    TOKEN_SUB_KIND_INVALID = 'invalid_token_sub_kind',
-}
-```
-
 ## `OAuth2RefreshToken`
 
 **Type**
@@ -81,7 +57,7 @@ interface OAuth2RefreshToken {
 ```
 
 **References**
-- [Client](api-reference-resources.md#client)
-- [Realm](api-reference-resources.md#realm)
-- [Robot](api-reference-resources.md#robot)
-- [User](api-reference-resources.md#user)
+- [Client](../core-kit/api-reference#client)
+- [Realm](../core-kit/api-reference#realm)
+- [Robot](../core-kit/api-reference#robot)
+- [User](../core-kit/api-reference#user)
