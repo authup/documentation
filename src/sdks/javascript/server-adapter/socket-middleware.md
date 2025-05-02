@@ -1,28 +1,38 @@
-# Socket Middleware
+# Socket.io
 
-The socket middleware should be injected at the beginning of the chain. 
+The socket-io server plugin provides utilities for socket.io based services.
 
-Besides, validating the authorization header, the `createSocketMiddleware` also extends the request 
-with general information (realm, abilities, ...) and information about the corresponding robot or user of the token.
+## Installation
+
+Add the package as a dependency to the project.
+
+```sh
+npm install @authup/server-core-plugin-socket-io --save
+```
 
 ## Configuration
 
-The `createSocketMiddleware` method, accepts a configuration object.
+The socket middleware should be injected at the beginning of the chain.
+
+Besides, validating the authorization header, the `createSocketMiddleware` also extends the request
+with general information (realm, abilities, ...) and information about the corresponding robot or user of the token.
+
+The `createMiddleware` method, accepts a configuration object.
 The redis client, if enabled, is used to cache verification responses from the backend service.
 
 ```typescript
 import { Server } from 'socket.io';
-import { createSocketMiddleware } from '@authup/server-adapter';
+import { createMiddleware } from '@authup/server-core-plugin-socket-io';
 import { createClient } from 'redis-extension';
 
 // create redis client
-const redis = createClient({connectionString: 'redis://127.0.0.1'});
+const redis = createClient({ connectionString: 'redis://127.0.0.1' });
 
 // setup socket.io server
 const server = new Server();
 
 // setup socket middleware for socket server
-server.use(createSocketMiddleware({
+server.use(createMiddleware({
     tokenByCookie: (req, cookieName) => req.cookies[cookieName],
     tokenVerifier: {
         baseURL: 'http://localhost:3010/',

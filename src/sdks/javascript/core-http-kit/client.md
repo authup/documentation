@@ -7,12 +7,10 @@ To configure the API Client, the `baseURL` parameter for the driver config of th
 
 
 ```typescript
-import { APIClient } from '@authup/core';
+import { Client } from '@authup/core-http-kit';
 
-const client = new APIClient({
-    driver: {
-        baseURL: 'http://127.0.0.1:3010/'
-    }
+const client = new Client({
+    baseURL: 'http://127.0.0.1:3010/'
 });
 ```
 
@@ -28,9 +26,9 @@ For example:
 **Realm**: realm
 
 ```typescript
-import { APIClient } from '@authup/core';
+import { Client } from '@authup/core-http-kit';
 
-const client = new APIClient(/* ... */);
+const client = new Client(/* ... */);
 
 (async () => {
     const response = await client.realm.create({
@@ -43,7 +41,7 @@ const client = new APIClient(/* ... */);
 
 ```
 
-Checkout the [domain](api-reference-resources.md) section for available APIClients.
+Checkout the [domain](../core-kit/api-reference) section for available APIClients.
 
 ## Request & Responses
 
@@ -99,26 +97,5 @@ const client = new APIClient({
     // }
 })();
 ```
-
-## Errors
-
-Depending on the payload, the request might not be successfully. In that case,
-the api responds with an error payload, which looks like this:
-
-::: warning Important
-
-The response maybe differs if the [server-core](../../contributing/index.md) package is **not** used with the provided error middleware.
-
-:::
-
-```json
-{
-    "message": "The application could not fulfill the request",
-    "code": "bad_request",
-    "statusCode": 400
-}
-```
-
-The error codes can be used to handle each error separately. Check out the [Api Reference](api-reference-system.md#errorcode) for available error codes.
 
 

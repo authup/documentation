@@ -1,4 +1,5 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
+
 export default defineConfig({
     title: 'Authup',
     base: '/',
@@ -26,9 +27,16 @@ export default defineConfig({
                 activeMatch: '/guide/',
                 items: [
                     { text: 'User', link: '/guide/user/'},
-                    { text: 'Deployment', link: '/guide/deployment/'},
                     { text: 'Development', link: '/guide/development/'},
-                    { text: 'Contributing', link: '/guide/contributing/'}
+                    { text: 'Deployment', link: '/guide/deployment/'},
+                ]
+            },
+            {
+                text: 'SDKs',
+                activeMatch: '/sdks/',
+                items: [
+                    { text: 'JavaScript', link: '/sdks/javascript/'},
+                    { text: 'Python', link: '/sdks/python/'}
                 ]
             },
             {
@@ -55,20 +63,34 @@ export default defineConfig({
                 {
                     text: 'Getting Started',
                     items: [
-                        {text: 'Introduction', link: '/guide/user/'},
-
+                        {text: 'Introduction', link: '/guide/user/'}
                     ]
                 },
-                /*
                 {
-                    text: 'Authentication',
+                    text: 'Concepts',
                     items: [
-                        {text: 'Grant Types', link: '/guide/user/docker' },
-                        {text: 'Social Login', link: '/guide/user/npm' },
+                        // { text: 'Single Sign-On (SSO)', link: '/guide/user/sso' },
+                        { text: 'Permissions & Policies', link: '/guide/user/permissions-and-policies'}
+                    ]
+                },
+                {
+                    text: 'Dashboard',
+                    items: [
+                        { text: 'Roles', link: '/guide/user/roles' },
+                        { text: 'Permissions', link: '/guide/user/permissions' },
+                        { text: 'Clients', link: '/guide/user/clients' },
+                        { text: 'Scopes', link: '/guide/user/scopes' },
+                        { text: 'Identity Providers', link: '/guide/user/identity-providers' },
+                        { text: 'Users', link: '/guide/user/users' },
+                    ]
+                },
+                {
+                    text: 'Troubleshooting & FAQ',
+                    items: [
+                        { text: 'FAQ', link: '/guide/user/faq'},
+                        { text: 'Contact', link: '/guide/user/contact'},
                     ]
                 }
-
-                */
             ],
             '/guide/deployment': [
                 {
@@ -115,78 +137,109 @@ export default defineConfig({
                     text: 'Getting Started',
                     items: [
                         {text: 'Introduction', link: '/guide/development/'},
+                        {text: 'Code of Conduct', link: '/guide/development/code-of-conduct'},
+                        {text: 'Submission Guidelines', link: '/guide/development/submission-guidelines'},
+                        {text: 'Repository Structure', link: '/guide/development/repository-structure'},
+                        {text: 'Quick Start', link: '/guide/development/quick-start'},
                     ]
                 },
-                /*
                 {
-                    text: 'Concepts',
+                    text: 'Integration',
                     items: [
-                        { text: 'Securing Applications', link: '/guide/development/securing-applications' }
+                        { text: 'Introduction', link: '/guide/development/integration'},
+                        { text: 'SKDs', link: '/guide/development/sdks'},
+                        { text: 'Projects (Showcases)', link: '/guide/development/projects'}
                     ]
                 },
-                 */
                 {
-                    text: 'Client Libraries / SDKs',
+                    text: 'API',
                     items: [
+                        { text: 'Introduction', link: '/guide/development/api-introduction'},
+                        { text: 'OAuth2', link: '/guide/development/api-oauth2'},
+                        { text: 'Examples', link: '/guide/development/api-examples'},
+                        { text: 'Error Handling', link: '/guide/development/api-error-handling'},
+                    ]
+                },
+            ],
+            '/sdks/python': [
+                {text: 'Python', link: '/sdks/python'},
+            ],
+            '/sdks/javascript/': [
+                {
+                    text: 'Kit',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/kit/'},
                         {
-                            text: 'JavaScript',
+                            text: 'Concepts',
                             items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-core/'},
-                                { text: 'HTTP Interceptor', link: '/guide/development/javascript-core/http-interceptor'},
-                                { text: 'Token Creator', link: '/guide/development/javascript-core/token-creator'},
-                                { text: 'Token Verifier', link: '/guide/development/javascript-core/token-verifier'},
-                                { text: 'API Client', link: '/guide/development/javascript-core/api-client' },
-                                { text: 'Ability Manager', link: '/guide/development/javascript-core/ability-manager' },
-                                { text: 'API Reference System', link: '/guide/development/javascript-core/api-reference-system' },
-                                { text: 'API Reference Resources', link: '/guide/development/javascript-core/api-reference-resources' },
+                                { text: 'Ability Manager', link: '/sdks/javascript/kit/ability-manager' },
                             ]
                         },
-
-                        {text: 'Python', link: '/guide/development/python'},
+                        { text: 'API Reference', link: '/sdks/javascript/kit/api-reference' }
                     ]
                 },
                 {
-                    text: 'Client Components',
+                    text: 'Core-Kit',
                     items: [
+                        { text: 'Introduction', link: '/sdks/javascript/core-kit/' },
+                        { text: 'API Reference', link: '/sdks/javascript/core-kit/api-reference' }
+                    ]
+                },
+                {
+                    text: 'Core-HTTP-Kit',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/core-http-kit/'},
                         {
-                            text: 'Vue',
+                            text: 'Concepts',
                             items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-client-vue/' },
-                                { text: 'Records', link: '/guide/development/javascript-client-vue/records'},
-                                { text: 'Forms', link: '/guide/development/javascript-client-vue/forms'},
-                                { text: 'Collections', link: '/guide/development/javascript-client-vue/collections'},
+                                { text: 'Interceptor', link: '/sdks/javascript/core-http-kit/interceptor'},
+                                { text: 'Token Creator', link: '/sdks/javascript/core-http-kit/token-creator'},
+                                { text: 'Token Verifier', link: '/sdks/javascript/core-http-kit/token-verifier'},
+                                { text: 'Client', link: '/sdks/javascript/core-http-kit/client' },
+                            ]
+                        }
+                    ],
+                },
+
+                {
+                    text: 'Client-Vue',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/client-vue/' },
+                        {
+                            text: 'Components',
+                            items: [
+                                { text: 'Records', link: '/sdks/javascript/client-vue/records'},
+                                { text: 'Forms', link: '/sdks/javascript/client-vue/forms'},
+                                { text: 'Collections', link: '/sdks/javascript/client-vue/collections'},
                             ]
                         }
                     ]
                 },
                 {
-                    text: 'Server Library/SDKs',
+                    text: 'Server-Adapter-HTTP',
                     items: [
+                        { text: 'Introduction', link: '/sdks/javascript/server-adapter-http/'},
                         {
-                            text: 'JavaScript',
+                            text: 'Concepts',
                             items: [
-                                { text: 'Introduction', link: '/guide/development/javascript-server-adapter/'},
-                                { text: 'HTTP Middleware', link: '/guide/development/javascript-server-adapter/http-middleware'},
-                                { text: 'Socket Middleware', link: '/guide/development/javascript-server-adapter/socket-middleware'}
+                                {text: 'Middleware', link: '/sdks/javascript/server-adapter-http/middleware'},
                             ]
-                        },
+                        }
                     ]
                 },
                 {
-                    text: 'API Reference',
+                    text: 'Server-Adapter-Socket-IO',
                     items: [
-                        { text: 'Domains', link: '/guide/development/api-reference-domains'}
+                        { text: 'Introduction', link: '/sdks/javascript/server-adapter-socket/'},
+                        {
+                            text: 'Concepts',
+                            items: [
+                                {text: 'Middleware', link: '/sdks/javascript/server-adapter-socket/middleware'},
+                            ]
+                        }
                     ]
                 }
-            ],
-            '/guide/contributing': [
-                {
-                    text: 'Getting Started',
-                    items: [
-                        {text: 'Introduction', link: '/guide/contributing/'},
-                    ]
-                },
-            ],
+            ]
         }
     }
 })

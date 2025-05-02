@@ -1,19 +1,23 @@
-# Introduction 
+# Introduction
 
-The Authup Developer Guide is a comprehensive resource for developers 
-looking to integrate their own services with the Authup system 🤝.
-This guide provides in-depth information on how to design and implement
-interoperable services that can seamlessly communicate with the Authup platform 🔌.
+The **Developer Guide** is designed to help you get started with **Authup**, 
+whether you're looking to contribute to the project,
+integrate it into your own system, or understand basic workflows. 
+It is divided into the following sections:
 
-The guide covers a variety of topics, including the use of client libraries (SDKs) to
-reduce development effort and the definition of schema for API resources 💻. 
-In particular, this guide focuses on the process of connecting your own services to the Authup
-platform and the best practices for achieving a high degree of interoperability.
+- **Integration**: Instructions on how to integrate Authup into your system, including SDKs and example projects.
+- **Workflows**: An overview of core workflows.
 
-Whether you are a seasoned developer or just getting started, the Authup Developer Guide is an essential
-resource for anyone looking to build services that integrate with the Authup platform.
-With detailed examples, step-by-step instructions, and helpful tips and tricks, 
-this guide will help you to create high-quality services that seamlessly integrate with the Authup ecosystem 🚀.
+If you're looking to contribute to the Authup ecosystem, we welcome your input! 
+Whether you're fixing bugs, suggesting features, or improving documentation, your contributions help make Authup better.
+Before you start contributing, please make sure to review the following:
+- [Code of Conduct](code-of-conduct.md) – Understand the community guidelines.
+- [Submission Guidelines](submission-guidelines.md) – Follow the process for submitting your contributions.
+- [Repository Structure](./repository-structure.md) -  Familiarize yourself with the project structure and how the packages are organized.
+
+Once you're ready, you can proceed to the [Quick Start](./quick-start.md) section to set up your local 
+development environment and begin working with Authup,
+either by integrating it into your systems or contributing to the project.
 
 
 
