@@ -63,14 +63,13 @@ export default defineConfig({
                 {
                     text: 'Getting Started',
                     items: [
-                        {text: 'Introduction', link: '/guide/user/'},
-
+                        {text: 'Introduction', link: '/guide/user/'}
                     ]
                 },
                 {
                     text: 'Concepts',
                     items: [
-                        { text: 'Single Sign-On (SSO)', link: '/guide/user/sso' },
+                        // { text: 'Single Sign-On (SSO)', link: '/guide/user/sso' },
                         { text: 'Permissions & Policies', link: '/guide/user/permissions-and-policies'}
                     ]
                 },
