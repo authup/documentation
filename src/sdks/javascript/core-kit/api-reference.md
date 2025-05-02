@@ -4,7 +4,7 @@
 
 **Type**
 ```typescript
-import { User } from '@authup/core';
+import { User } from '@authup/core-kit';
 
 interface Client {
     id: string,
@@ -51,7 +51,7 @@ import {
     IdentityProviderProtocol,
     IdentityProviderPreset,
     Realm
-} from '@authup/core';
+} from '@authup/core-kit';
 
 interface IdentityProvider {
     id: string,
@@ -115,7 +115,7 @@ import {
     IdentityProvider, 
     Realm,
     User
-} from '@authup/core';
+} from '@authup/core-kit';
 
 interface IdentityProviderAccount {
     id: string;
@@ -162,7 +162,7 @@ import {
     IdentityProvider,
     Realm, 
     Role
-} from '@authup/core';
+} from '@authup/core-kit';
 
 interface IdentityProviderRole {
     id: string;
@@ -217,7 +217,7 @@ interface Permission {
 
 **Type**
 ```typescript
-import { Permission } from '@authup/core';
+import { Permission } from '@authup/core-kit';
 
 interface PermissionRelation {
     power: number;
@@ -261,7 +261,7 @@ interface Realm {
 
 **Type**
 ```typescript
-import { Realm, User } from '@authup/core';
+import { Realm, User } from '@authup/core-kit';
 
 interface Robot {
     id: string;
@@ -300,7 +300,7 @@ interface Robot {
 
 **Type**
 ```typescript
-import { PermissionRelation, Realm, Robot } from '@authup/core';
+import { PermissionRelation, Realm, Robot } from '@authup/core-kit';
 
 interface RobotPermission extends PermissionRelation {
     id: string;
@@ -332,7 +332,7 @@ interface RobotPermission extends PermissionRelation {
 
 **Type**
 ```typescript
-import { Realm, Role } from '@authup/core';
+import { Realm, Role } from '@authup/core-kit';
 
 interface RobotRole {
     id: string;
@@ -371,7 +371,7 @@ interface RobotRole {
 
 **Type**
 ```typescript
-import { Realm } from '@authup/core';
+import { Realm } from '@authup/core-kit';
 
 interface Role {
     id: string;
@@ -401,7 +401,7 @@ interface Role {
 
 **Type**
 ```typescript
-import { Realm, Role } from '@authup/core';
+import { Realm, Role } from '@authup/core-kit';
 
 interface RoleAttribute {
     id: string;
@@ -436,7 +436,7 @@ interface RoleAttribute {
 
 **Type**
 ```typescript
-import { PermissionRelation, Realm, Role } from '@authup/core';
+import { PermissionRelation, Realm, Role } from '@authup/core-kit';
 
 interface RolePermission extends PermissionRelation {
     id: string;
@@ -468,7 +468,7 @@ interface RolePermission extends PermissionRelation {
 
 **Type**
 ```typescript
-import { Realm } from '@authup/core';
+import { Realm } from '@authup/core-kit';
 
 interface User {
     id: string;
@@ -537,7 +537,7 @@ interface User {
 
 **Type**
 ```typescript
-import { Realm, User } from '@authup/core';
+import { Realm, User } from '@authup/core-kit';
 
 interface UserAttribute {
     id: string;
@@ -572,7 +572,7 @@ interface UserAttribute {
 
 **Type**
 ```typescript
-import { PermissionRelation, Realm, User } from '@authup/core';
+import { PermissionRelation, Realm, User } from '@authup/core-kit';
 
 interface UserPermission extends PermissionRelation {
     id: string;
@@ -604,7 +604,7 @@ interface UserPermission extends PermissionRelation {
 
 **Type**
 ```typescript
-import { Realm, Role, User } from '@authup/core';
+import { Realm, Role, User } from '@authup/core-kit';
 
 interface UserRole {
     id: string;
