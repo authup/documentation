@@ -7,8 +7,8 @@ In the following, the PermissionChecker is initialized with the help of the Perm
 
 ## Provider
 
-For demonstration purposes, the PermissionMemoryProvider is only initialized with 3 permissions,
-whereby only the first permission is defined with a policy.
+For demonstration purposes, the PermissionMemoryProvider is only initialized with three permissions,
+whereby only the first permission is defined with a [policy](./policies.md).
 
 
 ```typescript
@@ -48,25 +48,31 @@ const checker = new PermissionChecker({
 
 checker.check({
     name: 'user_create',
-    attributes: {
-        name: 'admin'
+    input: {
+        attributes: {
+            name: 'admin'
+        }
     }
 });
 // success (allways) - no restrictions/policies
 
 checker.check({ 
-    name: 'user_update', 
-    attributes: { 
-        name: 'admin'
-    } 
+    name: 'user_update',
+    input: {
+        attributes: {
+            name: 'admin'
+        }
+    }
 });
 // success
 
 checker.check({ 
     name: 'user_update',
-    attributes: { 
-        name: 'admin', 
-        foo: 'bar'
+    input: {
+        attributes: {
+            name: 'admin',
+            foo: 'bar'
+        }
     }
 });
 // fails - foo is not allowed as attribute name

@@ -176,6 +176,7 @@ export default defineConfig({
                             text: 'Concepts',
                             items: [
                                 { text: 'Permission Checker', link: '/sdks/javascript/access/permission-checker' },
+                                { text: 'Policies', link: '/sdks/javascript/access/policies' },
                             ]
                         },
                         { text: 'API Reference', link: '/sdks/javascript/access/api-reference' }

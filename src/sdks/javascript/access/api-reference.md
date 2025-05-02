@@ -8,13 +8,13 @@ import { PermissionCheckerCheckOptions } from '@authup/access';
 
 export type PermissionCheckerCheckContext = {
     name: string | string[],
-    data?: PolicyData,
+    input?: PolicyInput,
     options?: PermissionCheckerCheckOptions
 };
 ```
 
 **References**
-- [PolicyData](#policydata)
+- [PolicyInput](#policyinput)
 - [PermissionCheckerCheckOptions](#permissioncheckercheckoptions)
 
 ## `PermissionCheckerCheckOptions`
@@ -40,13 +40,13 @@ export type PermissionItem = {
 };
 ```
 
-## `PolicyData`
+## `PolicyInput`
 
 **Type**
 ```typescript
 import { PermissionItem, PolicyIdentity } from '@authup/access';
 
-export type PolicyData = {
+export type PolicyInput = {
     /**
      * Permission for which the policy is evaluated.
      */
