@@ -166,16 +166,20 @@ export default defineConfig({
             ],
             '/sdks/javascript/': [
                 {
-                    text: 'Kit',
+                    text: 'Access',
                     items: [
-                        { text: 'Introduction', link: '/sdks/javascript/kit/'},
+                        { text: 'Introduction', link: '/sdks/javascript/access/'},
+                        /*
+
                         {
                             text: 'Concepts',
                             items: [
-                                { text: 'Ability Manager', link: '/sdks/javascript/kit/ability-manager' },
+                                { text: 'Permission Checker', link: '/sdks/javascript/access/permission-checker' },
                             ]
                         },
-                        { text: 'API Reference', link: '/sdks/javascript/kit/api-reference' }
+                        { text: 'API Reference', link: '/sdks/javascript/access/api-reference' }
+
+                         */
                     ]
                 },
                 {
