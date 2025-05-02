@@ -9,7 +9,9 @@ The following built-in policies are available:
 - [AttributeNames](#attributenames)
 - [Date](#date)
 - [Identity](#identity)
+- [PermissionBinding](#permission-binding)
 - [RealmMatch](#realmmatch)
+- [Time](#time)
 
 ## Attributes
 
