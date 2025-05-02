@@ -73,6 +73,7 @@ export default defineConfig({
                         { text: 'Permissions & Policies', link: '/guide/user/permissions-and-policies'}
                     ]
                 },
+                /*
                 {
                     text: 'Dashboard',
                     items: [
@@ -84,6 +85,8 @@ export default defineConfig({
                         { text: 'Users', link: '/guide/user/users' },
                     ]
                 },
+
+                 */
                 {
                     text: 'Troubleshooting & FAQ',
                     items: [
@@ -169,8 +172,6 @@ export default defineConfig({
                     text: 'Access',
                     items: [
                         { text: 'Introduction', link: '/sdks/javascript/access/'},
-                        /*
-
                         {
                             text: 'Concepts',
                             items: [
@@ -178,8 +179,6 @@ export default defineConfig({
                             ]
                         },
                         { text: 'API Reference', link: '/sdks/javascript/access/api-reference' }
-
-                         */
                     ]
                 },
                 {

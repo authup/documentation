@@ -1,63 +1,107 @@
 # System
 
-## `Ability`
-
-```typescript
-import { MongoQuery } from '@ucast/mongo2js';
-
-export type Ability<T extends Record<string, any> = Record<string, any>> = {
-    id: string,
-    inverse?: boolean,
-    condition?: MongoQuery<T> | null,
-    fields?: string[] | null,
-    target?: string | null,
-    power?: number | null
-};
-```
-
-## `OAuth2RefreshToken`
+## `PermissionCheckerCheckContext`
 
 **Type**
 ```typescript
-import {
-    OAuth2AccessToken,
-    Client,
-    Realm,
-    Robot,
-    User 
-} from '@authup/core';
+import { PermissionCheckerCheckOptions } from '@authup/access';
 
-interface OAuth2RefreshToken {
-    id: string;
-
-    expires: string;
-
-    scope: string | null;
-
-    // ------------------------------------------------------------------
-
-    client_id: Client['id'] | null;
-
-    client: Client | null;
-
-    user_id: User['id'] | null,
-
-    user: User | null,
-
-    robot_id: Robot['id'] | null,
-
-    robot: Robot | null,
-
-    access_token: string | null;
-
-    realm_id: Realm['id'];
-
-    realm: Realm;
-}
+export type PermissionCheckerCheckContext = {
+    name: string | string[],
+    data?: PolicyData,
+    options?: PermissionCheckerCheckOptions
+};
 ```
 
 **References**
-- [Client](../core-kit/api-reference#client)
-- [Realm](../core-kit/api-reference#realm)
-- [Robot](../core-kit/api-reference#robot)
-- [User](../core-kit/api-reference#user)
+- [PolicyData](#policydata)
+- [PermissionCheckerCheckOptions](#permissioncheckercheckoptions)
+
+## `PermissionCheckerCheckOptions`
+
+**Type**
+```typescript
+export type PermissionCheckerCheckOptions = {
+    decisionStrategy?: 'affirmative' | 'unanimous' | 'consensus',
+    policiesIncluded?: string[],
+    policiesExcluded?: string[],
+};
+```
+
+## `PermissionItem`
+
+**Type**
+```typescript
+export type PermissionItem = {
+    name: string,
+    clientId?: string | null,
+    realmId?: string | null,
+    policy?: Record<string, any>,
+};
+```
+
+## `PolicyData`
+
+**Type**
+```typescript
+import { PermissionItem, PolicyIdentity } from '@authup/access';
+
+export type PolicyData = {
+    /**
+     * Permission for which the policy is evaluated.
+     */
+    permission?: PermissionItem,
+
+    /**
+     * Identity of the executing party.
+     */
+    identity?: PolicyIdentity,
+
+    /**
+     * Attributes
+     */
+    attributes?: Record<string, any>,
+
+    /**
+     * The dateTime to use for time & date policy.
+     */
+    dateTime?: Date | number | string,
+
+    /**
+     * Extra Data
+     */
+    [key: string]: any
+};
+```
+
+**References**
+- [PolicyIdentity](#policyidentity)
+- [PermissionItem](#permissionitem)
+
+## `PolicyIdentity`
+
+**Type**
+```typescript
+export type PolicyIdentity = {
+    /**
+     * user, client, robot
+     */
+    type: string,
+    /**
+     * UUID
+     */
+    id: string,
+    /**
+     * Client associated with identity.
+     */
+    clientId?: string | null,
+    /**
+     * Realm id associated with identity.
+     */
+    realmId?: string | null,
+    /**
+     * Realm name associated with identity.
+     */
+    realmName?: string | null
+};
+```
