@@ -6,7 +6,7 @@ This section uses the **Permission** resource as an example to showcase various 
 For these examples, it is assumed that the backend application is running at `http://localhost:3001`.  
 Make sure to replace `Bearer ***` with a valid access token in all requests.  
 For a complete list of API endpoints and detailed specifications, visit the Swagger documentation at:  
-**http://localhost:3001/docs**
+`http://localhost:3001/docs`
 
 ## GET Collection
 

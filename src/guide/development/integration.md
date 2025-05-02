@@ -14,7 +14,7 @@ In this section, you’ll find information on:
 ## Need Help?
 
 If you encounter any issues during the integration process, we’re here to help:
-- Visit our [FAQ](../faq) for common questions.
+- Visit our [FAQ](./faq) for common questions.
 - Join our [community forum](https://github.com/authup/authup/discussions) to discuss and share your experiences.
 - Open an issue on [GitHub](https://github.com/authup/authup/issues) if you find a bug or need technical assistance.
 
