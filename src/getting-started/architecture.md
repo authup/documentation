@@ -15,4 +15,4 @@ The client application can be used in addition to the server component and provi
 management and interaction with API endpoints of the backend.
 It is based on vue3 and uses the frontend components provided by the vue package, 
 which can also be used in a custom user interface.
-Read more [here](../sdks/javascript/client-vue/). 
+Read more [here](../sdks/javascript/client-web-kit/). 

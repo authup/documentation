@@ -183,6 +183,32 @@ export default defineConfig({
                     ]
                 },
                 {
+                    text: 'Client-Web-Kit',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/client-web-kit/' },
+                        {
+                            text: 'Components',
+                            items: [
+                                { text: 'Records', link: '/sdks/javascript/client-web-kit/records'},
+                                { text: 'Forms', link: '/sdks/javascript/client-web-kit/forms'},
+                                { text: 'Collections', link: '/sdks/javascript/client-web-kit/collections'},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: 'Client-Web-Nuxt',
+                    items: [
+                        { text: 'Introduction', link: '/sdks/javascript/client-web-nuxt/' },
+                        {
+                            text: 'Concepts',
+                            items: [
+                                { text: 'Route Protection', link: '/sdks/javascript/client-web-nuxt/route-protection' },
+                            ]
+                        }
+                    ]
+                },
+                {
                     text: 'Core-Kit',
                     items: [
                         { text: 'Introduction', link: '/sdks/javascript/core-kit/' },
@@ -203,21 +229,6 @@ export default defineConfig({
                             ]
                         }
                     ],
-                },
-
-                {
-                    text: 'Client-Vue',
-                    items: [
-                        { text: 'Introduction', link: '/sdks/javascript/client-vue/' },
-                        {
-                            text: 'Components',
-                            items: [
-                                { text: 'Records', link: '/sdks/javascript/client-vue/records'},
-                                { text: 'Forms', link: '/sdks/javascript/client-vue/forms'},
-                                { text: 'Collections', link: '/sdks/javascript/client-vue/collections'},
-                            ]
-                        }
-                    ]
                 },
                 {
                     text: 'Server-Adapter-HTTP',

@@ -29,7 +29,7 @@ The entity prop can be used to directly provide the object instead of getting it
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUser } from '@authup/client-vue';
+    import { AUser } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -63,7 +63,7 @@ The entityId prop can be used to fetch a resource by its identifier from the API
 
 <script>
     import { defineComponent } from 'vue';
-    import { AUser } from '@authup/client-vue';
+    import { AUser } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -93,7 +93,7 @@ The queryFilters prop can be used to fetch a resource by **one** or **multiple**
 
 <script>
     import { defineComponent } from 'vue';
-    import { AUser } from '@authup/client-vue';
+    import { AUser } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -126,7 +126,7 @@ as it only reduces the field set or includes fields that are not returned by def
 
 <script>
     import { defineComponent } from 'vue';
-    import { AUser } from '@authup/client-vue';
+    import { AUser } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {

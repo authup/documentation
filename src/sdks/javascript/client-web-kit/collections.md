@@ -37,7 +37,7 @@ The package contains a **list** component for the following resources:
         ATitle,
         APagination,
         AUsers 
-    } from '@authup/client-vue';
+    } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -133,7 +133,7 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUsers } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -161,7 +161,7 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUsers } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -189,7 +189,7 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUsers } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -217,7 +217,7 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUsers } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {
@@ -240,7 +240,7 @@ Visit the documentation for more details about the parameters and the scheme.
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUsers } from '@authup/client-vue';
+    import { AUsers } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {

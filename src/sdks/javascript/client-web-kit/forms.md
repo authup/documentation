@@ -24,7 +24,7 @@ If the entity prop has no id parameter, the object is seen as a template for the
 ```vue
 <script>
     import { defineComponent } from 'vue';
-    import { AUserForm } from '@authup/client-vue';
+    import { AUserForm } from '@authup/client-web-kit';
 
     export default defineComponent({
         components: {

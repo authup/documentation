@@ -1,4 +1,4 @@
-# Client-Vue
+# Client-Web-Kit
 
 This package provides **lists**, **forms** and **entities** for all 
 [resources](../core-kit/api-reference) of the ecosystem.
@@ -9,7 +9,7 @@ Besides, many other features are also included.
 Add the package as a dev-dependency to the project.
 
 ```sh
-npm install @authup/client-vue --save-dev
+npm install @authup/client-web-kit --save-dev
 ```
 
 ## Configuration
