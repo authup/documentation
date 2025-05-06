@@ -187,6 +187,12 @@ export default defineConfig({
                     items: [
                         { text: 'Introduction', link: '/sdks/javascript/client-web-kit/' },
                         {
+                            text: 'Concepts',
+                            items: [
+                                { text: 'Session', link: '/sdks/javascript/client-web-kit/session' },
+                            ]
+                        },
+                        {
                             text: 'Components',
                             items: [
                                 { text: 'Records', link: '/sdks/javascript/client-web-kit/records'},
